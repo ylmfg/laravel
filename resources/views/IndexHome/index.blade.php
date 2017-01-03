@@ -4,8 +4,8 @@
 		 <meta charset="utf-8">
 		 <meta name="viewport" content="width=device-width,initial-scale=1">
 		 <title></title>
-		 <link  href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
-		 <link  href="{{asset('/css/app.css')}}" rel="stylesheet">
+		 <link  href="{{asset('/IndexHome/css/bootstrap.min.css')}}" rel="stylesheet">
+		 <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
          <style>
          
          </style>
@@ -16,7 +16,7 @@
     	 	 	<div class="row">
     	 	 		<div class="col-md-12">
     	 	 			<a class="branding" href="#" title="意灵魔法馆">
- <img src="{{asset('/images/logo.png')}}">
+ <img src="{{asset('/IndexHome/images/logo.png')}}">
  <h2 class="text-hide">艺术玻璃</h2>
     	 	 			</a>
     	 	 		</div>
@@ -54,6 +54,9 @@
                       </li>
                       <li  role="presentation" >
                         <a href="{{url('customer')}}">客户心声</a>
+                      </li>
+                      <li  role="presentation" >
+                        <a href="{{url('cart')}}">我的购物车<span class="badge">4</span></a>
                       </li>
                     </ul>
                 </div>
@@ -190,14 +193,14 @@
 
              <div class="carousel-inner">
                   <div class="item active">
-                    <img src="{{asset('/images/thumb1.jpg')}}" width="300px">
+                    <img src="{{asset('/IndexHome/images/thumb1.jpg')}}" width="300px">
                     <div class="carousel-caption">
                       <h3>艺术玻璃</h3>
                       <p>艺术玻璃推出新品</p>
                     </div>
                   </div>
                   <div class="item ">
-                    <img src="{{asset('/images/thumb2.jpg')}}" width="300px">
+                    <img src="{{asset('/IndexHome/images/thumb2.jpg')}}" width="300px">
                     <div class="carousel-caption">
                       <h3>
                       冰晶画
@@ -206,7 +209,7 @@
                     </div> 
                   </div>
                   <div class="item ">
-                    <img src="{{asset('/images/thumb3.jpg')}}" width="300px">
+                    <img src="{{asset('/IndexHome/images/thumb3.jpg')}}" width="300px">
                     <div class="carousel-caption">
                     <h3>
                       瓷砖画
@@ -335,9 +338,19 @@
       </div>
     </footer>
     </body>
-     <script type="text/javascript" src="{{asset('/js/jquery-2.0.3.min.js')}}"></script>
-     <script type="text/javascript" src="{{asset('/js/bootstrap.min.js')}}"></script>
+     <script type="text/javascript" src="{{asset('/IndexHome/js/jquery-2.0.3.min.js')}}"></script>
+     <script type="text/javascript" src="{{asset('/IndexHome/js/bootstrap.min.js')}}"></script>
+     <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
+
     <script>
+       layer.ready(function(){ //为了layer.ext.js加载完毕再执行
+              layer.open({
+                 title:'<div style="font-size:15px;">意灵玻艺装饰工坊</div>',
+                 type:0,
+                 content:'<div style="color:#FF6633;">欢迎来到意灵玻艺装饰工坊</div>'
+            }); 
+
+        });      
       $('.carousel').carousel({
         interval:2000
       })

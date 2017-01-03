@@ -3,13 +3,13 @@
 	<head lang="en">
 	    <meta charset="UTF-8">
         <title></title>
-        <script type="text/javascript" src="{{asset('/js/jquery-2.0.3.min.js')}}"></script>
-        <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
-       <script type="text/javascript" src="{{asset('/js/bootstrap.min.js')}}"></script>
-       <link  href="{{asset('/css/app.css')}}" rel="stylesheet">
+        <script type="text/javascript" src="{{asset('/IndexHome/js/jquery-2.0.3.min.js')}}"></script>
+        <link rel="stylesheet" href="{{asset('/IndexHome/css/bootstrap.min.css')}}">
+       <script type="text/javascript" src="{{asset('/IndexHome/js/bootstrap.min.js')}}"></script>
+       <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
        <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
-        <link rel="stylesheet" type="text/css" href="{{asset('/css/book.css')}}">
-       <script type="text/javascript" src="{{asset('/js/book.js')}}"></script>
+        <link rel="stylesheet" type="text/css" href="{{asset('/IndexHome/css/book.css')}}">
+       <script type="text/javascript" src="{{asset('/IndexHome/js/book.js')}}"></script>
       <style>
 
       </style>
@@ -59,6 +59,9 @@
                       <li  role="presentation" >
                         <a href="{{url('customer')}}">客户心声</a>
                       </li>
+                        <li  role="presentation" >
+                       <a href="{{url('cart')}}">我的购物车<span class="badge">4</span></a>
+                      </li>
                     </ul>
                 </div>
               </div>
@@ -70,28 +73,28 @@
       <a class="lastBtn"><</a>
       <a class="nextBtn">></a>
       <div class="bookPage frist">
-        <img src="images/dataImg1.png" />
+        <img src="{{asset('/IndexHome/images/dataImg1.png')}}" />
       </div>
       <div class="bookPage runPage">
         <div class="bookWord">
           <span>Glacier</span> red in the glacier.
           <span class="pageNumber">1</span>
         </div>
-        <img src="images/dataImg2.png" />  
+        <img src="{{asset('/IndexHome/images/dataImg2.png')}}" />  
       </div>
       <div class="bookPage runPage">
         <div class="bookWord">        
           <span>Surface</span>  water supply, the .
           <span class="pageNumber">2</span>
         </div>
-        <img src="images/dataImg3.png" />
+        <img src="{{asset('/IndexHome/images/dataImg3.png')}}" />
       </div>
       <div class="bookPage runPage">
         <div class="bookWord">
           <span>Groundwater</span>itions, good .
           <span class="pageNumber">3</span>
         </div>
-        <img src="images/dataImg4.png" />
+        <img src="{{asset('/IndexHome/images/dataImg4.png')}}" />
       </div>
       <div class="bookPage last">
         <div class="bookWord">

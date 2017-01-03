@@ -3,12 +3,12 @@
 	<head lang="en">
 	    <meta charset="UTF-8">
         <title></title>
-        <script type="text/javascript" src="{{asset('/js/jquery-2.0.3.min.js')}}"></script>
-        <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
-       <script type="text/javascript" src="{{asset('/js/bootstrap.min.js')}}"></script>
-       <link  href="{{asset('/css/app.css')}}" rel="stylesheet">
+        <script type="text/javascript" src="{{asset('/IndexHome/js/jquery-2.0.3.min.js')}}"></script>
+        <link rel="stylesheet" href="{{asset('/IndexHome/css/bootstrap.min.css')}}">
+       <script type="text/javascript" src="{{asset('/IndexHome/js/bootstrap.min.js')}}"></script>
+       <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
        <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
-       <link type="text/css" rel="stylesheet" href="{{asset('/css/imagehover.min.css')}}">
+       <link type="text/css" rel="stylesheet" href="{{asset('/IndexHome/css/imagehover.min.css')}}">
       <style>
            figcaption{
             margin:0;
@@ -22,7 +22,7 @@
           <div class="row">
             <div class="col-md-12">
               <a class="branding" href="#" title="意灵魔法馆">
-<img src="{{asset('/images/logo.png')}}">
+<img src="{{asset('/IndexHome/images/logo.png')}}">
  <h2 class="text-hide">艺术玻璃</h2>
               </a>
             </div>
@@ -61,6 +61,9 @@
                       <li  role="presentation" >
                         <a href="{{url('customer')}}">客户心声</a>
                       </li>
+                       <li  role="presentation" >
+                       <a href="{{url('cart')}}">我的购物车<span class="badge">4</span></a>
+                      </li>
                     </ul>
                 </div>
               </div>
@@ -71,9 +74,9 @@
         <div class="row">
                   <div class="col-md-4 text-center col-xs-4 thumbnail">
                   <figure class="imghvr-flip-diag-1">
-                           <img src="{{asset('/images/thumb1.jpg')}}">
+                           <img src="{{asset('/IndexHome/images/thumb1.jpg')}}">
                       <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/images/thumb3.jpg')}}">
+                             <img src="{{asset('/IndexHome/images/thumb3.jpg')}}">
                       </figcaption>
                   </figure>
                           <div class="caption">
@@ -88,9 +91,9 @@
                   </div>
                  <div class="col-md-4 text-center col-xs-4 thumbnail">
                             <figure class="imghvr-flip-diag-1">
-                           <img src="{{asset('/images/thumb2.jpg')}}">
+                           <img src="{{asset('/IndexHome/images/thumb2.jpg')}}">
                       <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/images/thumb2.jpg')}}">
+                             <img src="{{asset('/IndexHome/images/thumb2.jpg')}}">
                       </figcaption>
                   </figure>
                           <div class="caption">
@@ -104,9 +107,9 @@
                   </div>
                   <div class="col-md-4 text-center col-xs-4 thumbnail">
                             <figure class="imghvr-flip-diag-1">
-                           <img src="{{asset('/images/thumb3.jpg')}}">
+                           <img src="{{asset('/IndexHome/images/thumb3.jpg')}}">
                       <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/images/thumb1.jpg')}}">
+                             <img src="{{asset('/IndexHome/images/thumb1.jpg')}}">
                       </figcaption>
                   </figure>
                          <div class="caption">
@@ -122,9 +125,9 @@
                 <div class="row">
                   <div class="col-md-4 text-center col-xs-4 thumbnail">
                            <figure class="imghvr-flip-diag-1">
-                           <img src="{{asset('/images/thumb1.jpg')}}">
+                           <img src="{{asset('/IndexHome/images/thumb1.jpg')}}">
                       <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/images/thumb3.jpg')}}">
+                             <img src="{{asset('/IndexHome/images/thumb3.jpg')}}">
                       </figcaption>
                   </figure>
                           <div class="caption">
@@ -138,9 +141,9 @@
                   </div>
                  <div class="col-md-4 text-center col-xs-4 thumbnail">
                            <figure class="imghvr-flip-diag-2">
-                           <img src="{{asset('/images/thumb2.jpg')}}">
+                           <img src="{{asset('/IndexHome/images/thumb2.jpg')}}">
                       <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/images/thumb2.jpg')}}">
+                             <img src="{{asset('/IndexHome/images/thumb2.jpg')}}">
                       </figcaption>
                   </figure>
                          <div class="caption">
@@ -154,9 +157,9 @@
                   </div>
                   <div class="col-md-4 text-center col-xs-4 thumbnail">
                            <figure class="imghvr-flip-diag-1">
-                           <img src="{{asset('/images/thumb3.jpg')}}">
+                           <img src="{{asset('/IndexHome/images/thumb3.jpg')}}">
                       <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/images/thumb1.jpg')}}">
+                             <img src="{{asset('/IndexHome/images/thumb1.jpg')}}">
                       </figcaption>
                   </figure>
                         <div class="caption">

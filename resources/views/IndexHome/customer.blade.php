@@ -3,10 +3,10 @@
 	<head lang="en">
 	    <meta charset="UTF-8">
         <title></title>
-        <script type="text/javascript" src="{{asset('/js/jquery-2.0.3.min.js')}}"></script>
-        <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}">
-       <script type="text/javascript" src="{{asset('/js/bootstrap.min.js')}}"></script>
-       <link  href="{{asset('/css/app.css')}}" rel="stylesheet">
+        <script type="text/javascript" src="{{asset('/IndexHome/js/jquery-2.0.3.min.js')}}"></script>
+        <link rel="stylesheet" href="{{asset('/IndexHome/css/bootstrap.min.css')}}">
+       <script type="text/javascript" src="{{asset('/IndexHome/js/bootstrap.min.js')}}"></script>
+       <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
        <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
       <style>
 
@@ -18,7 +18,7 @@
           <div class="row">
             <div class="col-md-12">
               <a class="branding" href="#" title="意灵魔法馆">
- <img src="{{asset('/images/logo.png')}}">
+ <img src="{{asset('/IndexHome/images/logo.png')}}">
  <h2 class="text-hide">艺术玻璃</h2>
               </a>
             </div>
@@ -56,6 +56,9 @@
                       </li>
                       <li  role="presentation" class="nav-current">
                         <a href="{{url('customer')}}">客户心声</a>
+                      </li>
+                         <li  role="presentation">
+                       <a href="{{url('cart')}}">我的购物车<span class="badge">4</span></a>
                       </li>
                     </ul>
                 </div>

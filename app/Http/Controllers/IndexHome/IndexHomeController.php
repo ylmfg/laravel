@@ -18,4 +18,7 @@ class IndexHomeController extends Controller
    public function customer(){
    	return view('IndexHome/customer');
    }
+   public function cart(){
+   	 echo "欢迎来到购物车";
+   }
 }

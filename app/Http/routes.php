@@ -14,7 +14,9 @@
 Route::any('/',"IndexHome\IndexHomeController@index");
 Route::any("photoWall","IndexHome\IndexHomeController@photoWall");
 Route::any("customer","IndexHome\IndexHomeController@customer");
+Route::any("cart","IndexHome\IndexHomeController@cart");
 
 Route::any("bjh","IndexHome\BjhController@index");
 Route::any('senth',"IndexHome\SenthController@index");
 Route::any('yishuh',"IndexHome\YishuhController@index");
+Route::any('admin',"AdminHome\AdminHomeController@admin");

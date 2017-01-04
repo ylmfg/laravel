@@ -20,7 +20,7 @@
           <div class="row">
             <div class="col-md-12">
               <a class="branding" href="#" title="意灵魔法馆">
- <img src="{{asset('/images/logo.png')}}">
+ <img src="{{asset('/IndexHome/images/logo.png')}}">
  <h2 class="text-hide">艺术玻璃</h2>
               </a>
             </div>

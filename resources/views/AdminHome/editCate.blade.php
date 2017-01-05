@@ -6,9 +6,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/common.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/main.css')}}"/>
     <script type="text/javascript" src="{{asset('AdminHome/js/libs/modernizr.min.js')}}"></script>
-    <link href="{{asset('uploadify/uploadify.css')}}" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="{{asset('IndexHome/js/jquery-2.0.3.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('uploadify/jquery.uploadify.min.js')}}"></script>
 </head>
 <body>
 <div class="topbar-wrap white">
@@ -17,7 +14,7 @@
             <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
             <ul class="navbar-list clearfix">
                 <li><a class="on" href="{{url('index')}}">首页</a></li>
-                <li><a href="#" target="_blank">网站首页</a></li>
+                <li><a href="#" target="{{url('/')}}">网站首页</a></li>
             </ul>
         </div>
         <div class="top-info-wrap">
@@ -64,48 +61,18 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="{{url('index')}}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{{url('zuoping')}}">作品管理</a><span class="crumb-step">&gt;</span><span>新增作品</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="{{url('index')}}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{{url('category')}}">分类管理</a><span class="crumb-step">&gt;</span><span>新增分类</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="/jscss/admin/design/add" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                <form action="{{url('cateProccess')}}" method="post" id="myform" name="myform" enctype="multipart/form-data">
                     <table class="insert-tab" width="100%">
-                        <tbody><tr>
-                            <th width="120"><i class="require-red">*</i>分类：</th>
-                            <td>
-                                <select name="colId" id="catid" class="required">
-                                    <option value="">请选择</option>
-                                    @foreach ($cateList as $cate)
-                                    <option value="{{$cate->cate_id}}">{{$cate->title}}</option>
-                                    @endforeach
-                                </select>
-                            </td>
-                        </tr>
+                        <tbody>
                             <tr>
                                 <th><i class="require-red">*</i>标题：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="title" size="50" value="" type="text">
+                                    <input class="common-text required" id="title" name="title" size="50" value="{{$cateList->title}}" type="text">
                                 </td>
-                            </tr>
-                            <tr>
-                                <th>作者：</th>
-                                <td><input class="common-text" name="author" size="50" value="" type="text"></td>
-                            </tr>
-                             <tr>
-                                <th><i class="require-red">*</i>价格：</th>
-                                <td><input class="common-text" name="price" size="50" value="" type="text"></td>
-                            </tr>
-                              <tr>
-                                <th>关键词<i class="require-red">(逗号分隔)</i></th>
-                                <td><input class="common-text" name="keyword" size="50" value="" type="text"></td>
-                            </tr>
-                            <tr>
-                                <th><i class="require-red">*</i>缩略图：</th>
-                                <td><input name="thumb[]" id="uploadify" type="file"><!--<input type="submit" onclick="submitForm('/jscss/admin/design/upload')" value="上传图片"/>--></td>
-                            </tr>
-                            <tr>
-                                <th>内容：</th>
-                                <td><textarea name="content" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10"></textarea></td>
                             </tr>
                             <tr>
                                 <th></th>
@@ -114,7 +81,10 @@
                                     <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
                                 </td>
                             </tr>
-                        </tbody></table>
+                            <input type="hidden" name="cate_id" value="{{$cateList->cate_id}}">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}"  />
+                        </tbody>
+                        </table>
                 </form>
             </div>
         </div>
@@ -123,21 +93,4 @@
     <!--/main-->
 </div>
 </body>
-<script type="text/javascript">
-$(document).ready(function(){
-    $("#uploadify").uploadify({
-        'swf':"{{asset('uploadify/uploadify.swf')}}",
-        'folder': 'upload',
-        'uploader':"{{asset('uploadify/uploadify.php')}}",
-        'buttonText': '上传图片', //按钮
-        'fileTypeExts': '*.gif;*.jpg;*.png',  //上传类型
-        'queueSizeLimit': 10,
-        'auto': true,
-        'multi': true,
-        'onUploadSuccess':function(file,data,response){
-          console.log(data);
-        }
-    });
-});  
-</script>
 </html>

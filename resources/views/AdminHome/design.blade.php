@@ -72,7 +72,9 @@
                             <td>
                                 <select name="search-sort" id="">
                                     <option value="">全部</option>
-                                    <option value="19">精品界面</option><option value="20">推荐界面</option>
+                                    @foreach($cateList as $cate)
+                                    <option value="{{$cate->cate_id}}">{{$cate->title}}</option>
+                                    @endforeach
                                 </select>
                             </td>
                             <th width="70">关键字:</th>

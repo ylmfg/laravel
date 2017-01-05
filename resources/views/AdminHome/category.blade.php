@@ -5,7 +5,10 @@
     <title>后台管理</title>
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/common.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/main.css')}}"/>
-    <script type="text/javascript" src="{{asset('js/libs/modernizr.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('AdminHome/js/libs/modernizr.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/AdminHome/js/jquery-2.0.3.min.js')}}">
+    
+    </script>
 </head>
 <body>
 <div class="topbar-wrap white">
@@ -38,7 +41,7 @@
                     <ul class="sub-menu">
                         <li><a href="{{url('zuoping')}}"><i class="icon-font">&#xe008;</i>作品管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe005;</i>博文管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe006;</i>分类管理</a></li>
+                        <li><a href="{{url('category')}}"><i class="icon-font">&#xe006;</i>分类管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe004;</i>留言管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe052;</i>友情链接</a></li>
@@ -68,8 +71,7 @@
                 <div class="result-title">
                     <div class="result-list">
                         <a href="{{url('insertCate')}}"><i class="icon-font"></i>新增分类</a>
-                        <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
-                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+                        <a id="batchDel" href="javascript:;"><i class="icon-font"></i>批量删除</a>
                     </div>
                 </div>
                 <div class="result-content">
@@ -81,30 +83,19 @@
                             <th>更新时间</th>
                             <th>操作</th>
                         </tr>
+                        @foreach($cateList as $cate)
                         <tr>
-                            <td class="tc"><input name="id[]" value="59" type="checkbox"></td>
-                          
-                            <td>59</td>
-                            <td title="发哥经典"><a target="_blank" href="#" title="发哥经典">发哥经典</a> …
+                            <td class="tc"><input name="id[]" value="{{$cate->cate_id}}" type="checkbox"></td>
+                            <td>{{$cate->cate_id}}</td>
+                            <td title="{{$cate->title}}"><a target="_blank" href="#" >{{$cate->title}}</a>
                             </td>
-                            <td>2014-03-15 21:11:01</td>
+                            <td>{{date("Y/m/d H:i:s",$cate->time)}}</td>
                             <td>
-                                <a class="link-update" href="#">修改</a>
-                                <a class="link-del" href="#">删除</a>
+                                <a class="link-update" href="{{url('editCate/cateId',$cate->cate_id)}}">修改</a>
+                                <a class="del-cate" href="{{url('delCate/cateId',$cate->cate_id)}}" value="{{url('category')}}">删除</a>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="tc"><input name="id[]" value="58" type="checkbox"></td>
-                        
-                            <td>58</td>
-                            <td title="黑色经典"><a target="_blank" href="#" title="黑色经典">黑色经典</a> …
-                            </td>
-                            <td>2013-12-30 22:34:00</td>
-                            <td>
-                                <a class="link-update" href="#">修改</a>
-                                <a class="link-del" href="#">删除</a>
-                            </td>
-                        </tr>
+                        @endforeach
                     </table>
                     <div class="list-page"> 2 条 1/1 页</div>
                 </div>
@@ -114,4 +105,33 @@
     <!--/main-->
 </div>
 </body>
+<script type="text/javascript">
+    var ids=[];
+     $('.del-cate').on('click',function(){
+               var gnl=confirm("确认删除这条数据么?");  
+                if (gnl==true){  
+                 window.location.href=$(this).attr('value'); 
+                }else{  
+                return false;  
+                }  
+     });
+     $("input[name='id[]']").click(function(){
+           ids=[];
+          $("input[name='id[]']:checked").each(function(){
+            ids.push($(this).val());
+        });
+     });
+     $('.allChoose').click(function(){
+         ids=[];
+        $("input[type='checkbox']").prop('checked',$(this).prop('checked'));
+        $("input[name='id[]']:checked").each(function(){
+            ids.push($(this).val());
+        });
+     });
+     $('#batchDel').click(function(){
+        if(ids.length>0){
+            window.location.href="{{url('delCate/cateId')}}"+'/'+ids; 
+        }
+     })
+</script>
 </html>

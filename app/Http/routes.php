@@ -30,3 +30,5 @@ Route::any('loginout',"AdminHome\AdminHomeController@loginout");
 Route::any('category',"AdminHome\CategoryController@category");
 Route::any('insertCate',"AdminHome\CategoryController@insertCate");
 Route::any('cateProccess',"AdminHome\CategoryController@cateProccess");
+Route::any('editCate/cateId/{cateId}',"AdminHome\CategoryController@editCate");
+Route::any('delCate/cateId/{cateId}',"AdminHome\CategoryController@delCate");

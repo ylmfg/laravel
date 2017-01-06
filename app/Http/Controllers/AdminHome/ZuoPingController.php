@@ -4,8 +4,10 @@ namespace App\Http\Controllers\AdminHome;
 
 use Illuminate\Http\Request;
 use DB;
+use Validator;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
 
 class ZuoPingController extends Controller
@@ -25,5 +27,15 @@ class ZuoPingController extends Controller
     	}else{
     	  return redirect('admin');
     	}
+    }
+    //新增数据
+    public function insertProccess(Request $request){
+        $validate=Validator::make($request->except('_token'),[
+              'title'=>'required',
+              'price'=>'required',
+            ]);
+        if($validate->fails()){
+            return redirect('insert')->withErrors($validate)->withInput();
+        }
     }
 }

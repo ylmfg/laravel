@@ -18,7 +18,7 @@ Route::any("cart","IndexHome\IndexHomeController@cart");
 Route::any("bjh","IndexHome\BjhController@index");
 Route::any('senth',"IndexHome\SenthController@index");
 Route::any('yishuh',"IndexHome\YishuhController@index");
-
+Route::any('upload',"Common\CommonController@upload");
 //后台
 Route::any('admin',"AdminHome\AdminHomeController@admin");
 Route::post('login',"AdminHome\AdminHomeController@login");
@@ -32,3 +32,4 @@ Route::any('insertCate',"AdminHome\CategoryController@insertCate");
 Route::any('cateProccess',"AdminHome\CategoryController@cateProccess");
 Route::any('editCate/cateId/{cateId}',"AdminHome\CategoryController@editCate");
 Route::any('delCate/cateId/{cateId}',"AdminHome\CategoryController@delCate");
+Route::any('insertProccess',"AdminHome\ZuoPingController@insertProccess");

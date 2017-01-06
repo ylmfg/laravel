@@ -6,8 +6,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/common.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/main.css')}}"/>
     <script type="text/javascript" src="{{asset('AdminHome/js/libs/modernizr.min.js')}}"></script>
-    <link href="{{asset('uploadify/uploadify.css')}}" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="{{asset('IndexHome/js/jquery-2.0.3.min.js')}}"></script>
+    <link href="{{asset('uploadify/uploadify.css')}}" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="{{asset('uploadify/jquery.uploadify.min.js')}}"></script>
 </head>
 <body>
@@ -68,12 +68,21 @@
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="/jscss/admin/design/add" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                @if(count($errors)>0)
+                  <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                  </div>
+                @endif
+                <form action="{{'insertProccess'}}" method="post" id="myform" name="myform" enctype="multipart/form-data">
                     <table class="insert-tab" width="100%">
                         <tbody><tr>
                             <th width="120"><i class="require-red">*</i>分类：</th>
                             <td>
-                                <select name="colId" id="catid" class="required">
+                                <select name="cate_id" id="catid" class="required">
                                     <option value="">请选择</option>
                                     @foreach ($cateList as $cate)
                                     <option value="{{$cate->cate_id}}">{{$cate->title}}</option>
@@ -101,7 +110,14 @@
                             </tr>
                             <tr>
                                 <th><i class="require-red">*</i>缩略图：</th>
-                                <td><input name="thumb[]" id="uploadify" type="file"><!--<input type="submit" onclick="submitForm('/jscss/admin/design/upload')" value="上传图片"/>--></td>
+                                <td>
+                                <input name="Filedata" id="uploadify" type="file">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td id="thumb">
+                                </td>
                             </tr>
                             <tr>
                                 <th>内容：</th>
@@ -115,6 +131,7 @@
                                 </td>
                             </tr>
                         </tbody></table>
+                            <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                 </form>
             </div>
         </div>
@@ -124,20 +141,41 @@
 </div>
 </body>
 <script type="text/javascript">
-$(document).ready(function(){
+     $(function(){
+         $.fn.delimgs = function (obj) {
+          var obj = obj || '.del';
+           $(obj).on('click',function(){
+             $(this).parent().remove();
+          });
+        }
+         $.fn.delimgs();
+
+     });   
+    <?php $timestamp = time();?>
     $("#uploadify").uploadify({
+        'formData' : {
+                    'timestamp' : '<?php echo $timestamp;?>',
+                    '_token'     : "{{csrf_token()}}"
+                },
         'swf':"{{asset('uploadify/uploadify.swf')}}",
-        'folder': 'upload',
-        'uploader':"{{asset('uploadify/uploadify.php')}}",
+        'uploader':"{{url('upload')}}",
+        'cancelImg': "{{asset('uploadify/uploadify-cancel.png')}}",
         'buttonText': '上传图片', //按钮
         'fileTypeExts': '*.gif;*.jpg;*.png',  //上传类型
         'queueSizeLimit': 10,
         'auto': true,
         'multi': true,
-        'onUploadSuccess':function(file,data,response){
-          console.log(data);
+        'onUploadSuccess':function(file,data,respose){
+            var html="";
+                html+="<div style='margin-left:10px;float:left;width:100px;height:100px;position:relative;'>";
+                html+='<img style="width:100px;height:100px;" src='+'/'+data+'>';
+                html+='<span class="del" style="position:absolute;right:0px;top:-8px;"><img src="/public/AdminHome/images/delete.png"></span>';
+                html+='<input type="hidden" name="thumb[]" value='+'/'+data+'>';
+                html+="</div>"; 
+            $('#thumb').append(html);
+            $.fn.delimgs('.del');
         }
     });
-});  
+  
 </script>
 </html>

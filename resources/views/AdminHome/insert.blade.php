@@ -9,6 +9,32 @@
     <script type="text/javascript" src="{{asset('IndexHome/js/jquery-2.0.3.min.js')}}"></script>
     <link href="{{asset('uploadify/uploadify.css')}}" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="{{asset('uploadify/jquery.uploadify.min.js')}}"></script>
+    <!--引入ueditor-->
+    <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.config.js')}}"></script>
+    <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/ueditor.all.min.js')}}"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="{{asset('ueditor/lang/zh-cn/zh-cn.js')}}"></script>
+
+    <style>
+        .mark{
+            background: #fffbf0;
+            font-size:15px;
+            font-family: '楷体';
+        }
+        .edui-default{
+            line-height: 28px;
+         }
+        div.edui-combox-body,div.edui-button-body,div.edui-splitbutton-body{
+            overflow: hidden;
+            height: 20px;    
+         }
+        div.edui-box{
+            overflow: hidden;
+            height: 22px;
+        } 
+    
+    </style>
 </head>
 <body>
 <div class="topbar-wrap white">
@@ -69,7 +95,7 @@
         <div class="result-wrap">
             <div class="result-content">
                 @if(count($errors)>0)
-                  <div class="alert alert-danger">
+                  <div class="mark">
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -96,17 +122,13 @@
                                     <input class="common-text required" id="title" name="title" size="50" value="" type="text">
                                 </td>
                             </tr>
-                            <tr>
-                                <th>作者：</th>
-                                <td><input class="common-text" name="author" size="50" value="" type="text"></td>
-                            </tr>
                              <tr>
                                 <th><i class="require-red">*</i>价格：</th>
                                 <td><input class="common-text" name="price" size="50" value="" type="text"></td>
                             </tr>
                               <tr>
                                 <th>关键词<i class="require-red">(逗号分隔)</i></th>
-                                <td><input class="common-text" name="keyword" size="50" value="" type="text"></td>
+                                <td><input class="common-text" name="keyword" size="50" value="" maxlength="20" type="text"></td>
                             </tr>
                             <tr>
                                 <th><i class="require-red">*</i>缩略图：</th>
@@ -121,7 +143,9 @@
                             </tr>
                             <tr>
                                 <th>内容：</th>
-                                <td><textarea name="content" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10"></textarea></td>
+                                <td>
+                            <script id="editor" name="content" type="text/plain" style="width:860px;height:500px;"></script>
+                               </td>
                             </tr>
                             <tr>
                                 <th></th>
@@ -150,7 +174,9 @@
         }
          $.fn.delimgs();
 
-     });   
+     }); 
+     //实例化编辑器
+     var ue = UE.getEditor('editor');  
     <?php $timestamp = time();?>
     $("#uploadify").uploadify({
         'formData' : {
@@ -170,7 +196,7 @@
                 html+="<div style='margin-left:10px;float:left;width:100px;height:100px;position:relative;'>";
                 html+='<img style="width:100px;height:100px;" src='+'/'+data+'>';
                 html+='<span class="del" style="position:absolute;right:0px;top:-8px;"><img src="/public/AdminHome/images/delete.png"></span>';
-                html+='<input type="hidden" name="thumb[]" value='+'/'+data+'>';
+                html+='<input type="hidden" name="thumb[]" value='+data+'>';
                 html+="</div>"; 
             $('#thumb').append(html);
             $.fn.delimgs('.del');

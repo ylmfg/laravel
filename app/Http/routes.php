@@ -33,3 +33,4 @@ Route::any('cateProccess',"AdminHome\CategoryController@cateProccess");
 Route::any('editCate/cateId/{cateId}',"AdminHome\CategoryController@editCate");
 Route::any('delCate/cateId/{cateId}',"AdminHome\CategoryController@delCate");
 Route::any('insertProccess',"AdminHome\ZuoPingController@insertProccess");
+Route::any('editProduct/productId/{productId}',"AdminHome\ZuoPingController@editProduct");

@@ -5,7 +5,19 @@
     <title>后台管理</title>
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/common.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/main.css')}}"/>
-    <script type="text/javascript" src="{{asset('js/libs/modernizr.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('AdminHome/js/libs/modernizr.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/IndexHome/js/jquery-2.0.3.min.js')}}"></script>
+    <style>
+        .result-tab tr th,td{
+            text-align:center;
+        }
+        .list-page ul li{
+            float:left;
+        }
+        .list-page ul li span{
+            padding:6px 5px;
+        }
+    </style>
 </head>
 <body>
 <div class="topbar-wrap white">
@@ -98,56 +110,44 @@
                     <table class="result-tab" width="100%">
                         <tr>
                             <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
-                            <th>排序</th>
                             <th>ID</th>
+                            <th>封面图片</th>
                             <th>标题</th>
+                            <th>价格(元)</th>
+                            <th>分类栏目</th>
                             <th>审核状态</th>
-                            <th>点击</th>
                             <th>发布人</th>
                             <th>更新时间</th>
-                            <th>评论</th>
                             <th>操作</th>
                         </tr>
+                        @foreach($productList as $product)
                         <tr>
                             <td class="tc"><input name="id[]" value="59" type="checkbox"></td>
-                            <td>
-                                <input name="ids[]" value="59" type="hidden">
-                                <input class="common-input sort-input" name="ord[]" value="0" type="text">
+                            <td>{{$product->id}}</td>
+                            <td><img src="/{{$product->thumb[0]}}" width="100" height="100"></td>
+                            <td title="{{$product->title}}"><a target="_blank" href="#" title="{{$product->title}}">{{$product->title}}</a>
                             </td>
-                            <td>59</td>
-                            <td title="发哥经典"><a target="_blank" href="#" title="发哥经典">发哥经典</a> …
-                            </td>
-                            <td>0</td>
-                            <td>2</td>
-                            <td>admin</td>
-                            <td>2014-03-15 21:11:01</td>
-                            <td></td>
+                            <td>{{$product->price}}</td>
+                            <td>{{$product->cate_title}}</td>
                             <td>
-                                <a class="link-update" href="#">修改</a>
+                                @if(0==$product->status)
+                                 未审核
+                                @else
+                                 已审核
+                                @endif
+                            </td>
+                            <td>{{$product->publisher}}</td>
+                            <td>{{date('Y/m/d H:i:s',$product->uptime)}}</td>
+                            <td>
+                                <a class="link-update" href="{{url('editProduct/productId',['productId'=>$product->cate_id])}}">修改</a>
                                 <a class="link-del" href="#">删除</a>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="tc"><input name="id[]" value="58" type="checkbox"></td>
-                            <td>
-                                <input name="ids[]" value="58" type="hidden">
-                                <input class="common-input sort-input" name="ord[]" value="0" type="text">
-                            </td>
-                            <td>58</td>
-                            <td title="黑色经典"><a target="_blank" href="#" title="黑色经典">黑色经典</a> …
-                            </td>
-                            <td>0</td>
-                            <td>35</td>
-                            <td>admin</td>
-                            <td>2013-12-30 22:34:00</td>
-                            <td></td>
-                            <td>
-                                <a class="link-update" href="#">修改</a>
-                                <a class="link-del" href="#">删除</a>
-                            </td>
-                        </tr>
+                        @endforeach
                     </table>
-                    <div class="list-page"> 2 条 1/1 页</div>
+                    <div class="list-page">
+                        {{$productList->links()}}
+                    </div>
                 </div>
             </form>
         </div>
@@ -155,4 +155,8 @@
     <!--/main-->
 </div>
 </body>
+<script>
+    $('select[name="search-sort"]').on('change',function(){
+    });
+</script>
 </html>

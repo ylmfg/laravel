@@ -117,7 +117,7 @@
       setTimeout(function(){
         var lis = [];
         for(var i = 0; i < 3; i++){
-          var param='http://'+location.host+'/IndexHome/images/thumb'+( (page-1)*3 + i + 1 )+'.jpg';
+          var param='http://'+location.host+'/public/IndexHome/images/thumb'+( (page-1)*3 + i + 1 )+'.jpg';
           lis.push('<li class="col-md-4 col-xs-4" >'+'<img width="98%" src='+param+'>'+'</li>')
         }
         

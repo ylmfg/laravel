@@ -85,7 +85,7 @@
                                 <select name="search-sort" id="">
                                     <option value="">全部</option>
                                     @foreach($cateList as $cate)
-                                    <option value="{{$cate->cate_id}}">{{$cate->title}}</option>
+                                    <option value="{{$cate->cate_id}}" @if($cate->cate_id==$cateId) selected @endif>{{$cate->title}}</option>
                                     @endforeach
                                 </select>
                             </td>
@@ -139,7 +139,7 @@
                             <td>{{$product->publisher}}</td>
                             <td>{{date('Y/m/d H:i:s',$product->uptime)}}</td>
                             <td>
-                                <a class="link-update" href="{{url('editProduct/productId',['productId'=>$product->cate_id])}}">修改</a>
+                                <a class="link-update" href="{{url('editProduct/productId',['productId'=>$product->id])}}">修改</a>
                                 <a class="link-del" href="#">删除</a>
                             </td>
                         </tr>
@@ -157,6 +157,15 @@
 </body>
 <script>
     $('select[name="search-sort"]').on('change',function(){
+           var url;
+           if($(this).val()){
+                url="{{url('zuoping')}}"+'/'+$(this).val();
+               location.href=url;
+           }else{
+               url="{{url('zuoping')}}";
+               location.href=url;
+           }
+   
     });
 </script>
 </html>

@@ -111,7 +111,7 @@
                                 <select name="cate_id" id="catid" class="required">
                                     <option value="">请选择</option>
                                     @foreach ($cateList as $cate)
-                                    <option value="{{$cate->cate_id}}" @if($cate->cate_id==$productList->id) selected @endif>{{$cate->title}}</option>
+                                    <option value="{{$cate->cate_id}}" @if($cate->cate_id==$productList->cate_id) selected @endif>{{$cate->title}}</option>
                                     @endforeach
                                 </select>
                             </td>

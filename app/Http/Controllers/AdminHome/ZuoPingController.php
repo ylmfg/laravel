@@ -12,18 +12,27 @@ use App\Http\Controllers\Controller;
 
 class ZuoPingController extends Controller
 {
-    public function zuoping(){
+    public function zuoping($cateId=null){
     	if(Session::has('user')){
-          $cateList=DB::table('category')->get();
-          $productList=DB::table('production')
+          if(isset($cateId)){
+                 $productList=DB::table('production')
                   ->orderBy('production.cate_id','desc')
                   ->leftJoin('category','production.cate_id','=','category.cate_id')
                   ->select('production.*','category.title as cate_title')
-                  ->paginate();
+                  ->where('production.cate_id','=',$cateId)
+                  ->paginate(5);
+          }else{
+                 $productList=DB::table('production')
+                  ->orderBy('production.cate_id','desc')
+                  ->leftJoin('category','production.cate_id','=','category.cate_id')
+                  ->select('production.*','category.title as cate_title')
+                  ->paginate(5);
+          }
+          $cateList=DB::table('category')->get();
          foreach($productList as $product){
             $product->thumb=explode('|', $product->thumb);
          }
-    	  return view('AdminHome/design',['cateList'=>$cateList,'productList'=>$productList]);	
+    	  return view('AdminHome/design',['cateList'=>$cateList,'productList'=>$productList,'cateId'=>$cateId]);	
     	}else{
     	  return redirect('admin');
     	}

@@ -23,7 +23,7 @@ Route::any('upload',"Common\CommonController@upload");
 Route::any('admin',"AdminHome\AdminHomeController@admin");
 Route::post('login',"AdminHome\AdminHomeController@login");
 Route::any('index',"AdminHome\AdminHomeController@index");
-Route::any('zuoping',"AdminHome\ZuoPingController@zuoping");
+Route::any('zuoping/{cateId?}',"AdminHome\ZuoPingController@zuoping");
 Route::any('insert',"AdminHome\ZuoPingController@insert");
 Route::any('system',"AdminHome\SystemController@system");
 Route::any('loginout',"AdminHome\AdminHomeController@loginout");

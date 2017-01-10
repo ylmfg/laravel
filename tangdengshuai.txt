@@ -1,0 +1,10 @@
+                                                     javascript
+一、数据类型
+Number、string、boolen、null、undefined、object、array
+Number:浮点数和整型
+string:单引号或者双引号
+boolen:false和true
+null:表示一个空值
+undefined:表示未定义
+object:键(字符串类型)和值(任意数据类型)的无序集合
+array:

@@ -123,8 +123,12 @@
                                 </td>
                             </tr>
                              <tr>
-                                <th><i class="require-red">*</i>价格：</th>
-                                <td><input class="common-text" name="price" size="50" value="{{$productList->price}}" type="text"></td>
+                                <th><i class="require-red">*</i>原价：</th>
+                                <td><input class="common-text" name="old_price" size="50" value="{{$productList->old_price}}" readonly='true' type="text"></td>
+                            </tr>
+                             <tr>
+                                <th><i class="require-red">*</i>现价：</th>
+                                <td><input class="common-text" name="current_price" size="50" value="{{$productList->current_price}}" type="text"></td>
                             </tr>
                               <tr>
                                 <th>关键词<i class="require-red">(逗号分隔)</i></th>
@@ -151,7 +155,13 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>内容：</th>
+                                <th><i class="require-red">*</i>简介：</th>
+                                <td>
+                                <textarea name="intro" rows="15" cols="120">{{$productList->intro}}</textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>内容：</th>
                                 <td>
                             <script id="editor" name="content" type="text/plain" style="width:860px;height:500px;">{!!$productList->content!!}</script>
                                </td>

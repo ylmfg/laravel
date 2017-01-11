@@ -8,8 +8,9 @@
        <script type="text/javascript" src="{{asset('/IndexHome/js/bootstrap.min.js')}}"></script>
        <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
        <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
-        <link rel="stylesheet" type="text/css" href="{{asset('/IndexHome/css/book.css')}}">
-       <script type="text/javascript" src="{{asset('/IndexHome/js/book.js')}}"></script>
+       <link rel="stylesheet" type="text/css" href="http://libs.useso.com/js/font-awesome/4.2.0/css/font-awesome.min.css">
+       <link rel="stylesheet" type="text/css" href="{{asset('/IndexHome/css/style.css')}}">
+       <script type="text/javascript" src="{{asset('/IndexHome/js/shop.min.js')}}"></script>
       <style>
 
       </style>
@@ -27,7 +28,7 @@
           </div>
          </div>
        </header>
-     <nav class="main-navigation">
+     <nav class="main-navigation" style="margin-bottom: -3px;">
            <div class="container">
              <div class="row">
               <div class="col-md-12">
@@ -68,41 +69,88 @@
              </div>
            </div>
    </nav>
-   <section id="knowledge" class="viewBlock">
-    <div class="bookBox">
-      <a class="lastBtn"><</a>
-      <a class="nextBtn">></a>
-      <div class="bookPage frist">
-        <img src="{{asset('/IndexHome/images/dataImg1.png')}}" />
-      </div>
-      <div class="bookPage runPage">
-        <div class="bookWord">
-          <span>Glacier</span> red in the glacier.
-          <span class="pageNumber">1</span>
-        </div>
-        <img src="{{asset('/IndexHome/images/dataImg2.png')}}" />  
-      </div>
-      <div class="bookPage runPage">
-        <div class="bookWord">        
-          <span>Surface</span>  water supply, the .
-          <span class="pageNumber">2</span>
-        </div>
-        <img src="{{asset('/IndexHome/images/dataImg3.png')}}" />
-      </div>
-      <div class="bookPage runPage">
-        <div class="bookWord">
-          <span>Groundwater</span>itions, good .
-          <span class="pageNumber">3</span>
-        </div>
-        <img src="{{asset('/IndexHome/images/dataImg4.png')}}" />
-      </div>
-      <div class="bookPage last">
-        <div class="bookWord">
-          <span>Ocean</span>nts for only 2%.</span>
-          <span class="pageNumber">4</span>
-        </div>
+  <div class="ct-pageWrapper">
+  <main>
+  <div class="container">
+    <div class="row">
+    <div class="col-md-3">
+      <div class="widget">
+      <h2 class="widget-header">购物车</h2>
+      <div class="ct-cart"></div>
       </div>
     </div>
-  </section>
+    <div class="col-md-9">
+      <div class="row">
+      <div class="col-sm-4">
+        <div class="ct-product">
+        <div class="image"><img src="{{asset('IndexHome/images/product-01.jpg')}}" alt=""></div>
+        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
+          <h2 class="ct-product-title">Box of macaroons</h2>
+          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$19.99</span>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="ct-product">
+        <div class="image"><img src="{{asset('IndexHome/images/product-02.jpg')}}" alt=""></div>
+        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
+          <h2 class="ct-product-title">Cherry Straws</h2>
+          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$34.99</span>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="ct-product">
+        <div class="image"><img src="{{asset('IndexHome/images/product-03.jpg')}}" alt=""></div>
+        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
+          <h2 class="ct-product-title">Coffee Macaroons</h2>
+          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$59.99</span>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="ct-product">
+        <div class="image"><img src="{{asset('IndexHome/images/product-04.jpg')}}" alt=""></div>
+        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
+          <h2 class="ct-product-title">Finetti ones</h2>
+          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$9.99</span>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="ct-product">
+        <div class="image"><img src="{{asset('IndexHome/images/product-05.jpg')}}" alt=""></div>
+        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
+          <h2 class="ct-product-title">Minty duo</h2>
+          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$3.99</span>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="ct-product">
+        <div class="image"><img src="{{asset('IndexHome/images/product-06.jpg')}}" alt=""></div>
+        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
+          <h2 class="ct-product-title">Pistachio</h2>
+          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$13.99</span>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </main>
+  </div>
    </body>
+<script>
+$('body').ctshop({
+  currency: '￥',
+  paypal: {
+  currency_code: 'EUR'
+  }
+});
+$('.col-sm-4').on('click',function(){
+    //跳转页面
+})
+</script>
    </html>

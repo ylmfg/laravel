@@ -3,8 +3,24 @@
 Number、string、boolen、null、undefined、object、array
 Number:浮点数和整型
 string:单引号或者双引号
-boolen:false和true
+boolean:false和true
 null:表示一个空值
 undefined:表示未定义
 object:键(字符串类型)和值(任意数据类型)的无序集合
 array:
+二、
+array:push()在末尾添加元素 unshift()在头部添加元素
+      pop()删掉最后一个元素 shift()删掉头部元素
+      splice()从指定的索引删除若干元素,然后再从该位置添加若干元素
+      concat()把当前array和另外一个array连接起来
+      join()把当前每个元素用指定的字符串连接起来
+object:判断一个属性是否是某个对象自身拥有的用hasOwnProperty()
+
+三、
+标准对象
+   包装对象:number boolen string
+    var str=new String('s');
+    var b=new Boolean(true);
+    var n=new Number(12345);
+    使用parseInt()和parseFloat()转换任意类型到Number;
+    var data=new Date();//对象用来表示日期和时间

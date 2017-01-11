@@ -68,26 +68,26 @@
        <div class="container">
           <div class="row">
              <main class="col-md-8 main-content">
+
+               @foreach($productList as $product)
                 <article class="post tag-about-ghost tag-ghost-in-depth tag-zhu-shou-han-shu">
                   <div class="post-head">
                     <h1 class="post-title">
-                      <a href="#">广告灯箱市场——彰显艺术效果，先声夺人</a>
+                      <a href="#">{{$product->title}}</a>
                     </h1>
                     <div class="post-meta">
                        <span class="author">
                          作者
-                        <a href="#">意灵魔法馆</a>
+                        <a href="#">{{$product->publisher}}</a>
                        </span>
-                       <time class="date" datetime="2016/12/29">2016年12月29日</time>
+                       <time class="date" datetime="2016/12/29">{{date('Y年m月d日',$product->uptime)}}</time>
                     </div>
                   </div>
                   <div class="post-content">
-          <p>广告灯箱市场——彰显艺术效果，先声夺人
-运用特殊工艺处理技术制作出来的玻璃形象牌、玻璃灯箱、大型户外玻璃广告牌等也是一种全新的商业展示手段，艺术玻璃其效果也非一般广告效果可比。为企业宣传提供新的视野，也为广告公司提供新的商业机会。立体视觉的广告玻璃镜面简直让人触手可及；呼之欲出的立体逼真感，给人们带来强烈的视觉冲击，让人流连忘返、不忍离去的广告效应。据统计，全国每年广告灯箱材料消耗近200亿元的市场容量，万人迷玻璃广告牌、广告灯箱的出现将带来新一轮的冲击波。
-      </p>
+          <p>{{$product->intro}}</p>
         </div>
         <div class="post-permalink">
-          <a href="" class="btn btn-default">阅读全文</a>
+          <a href="{{url('detail',['product'=>$product->id])}}" class="btn btn-default">阅读全文</a>
         </div>
         <div class="footer clearfix">
            <hr>
@@ -98,80 +98,13 @@
               <a href="#" class="btn btn-primary">生态画</a>
            </div>
         </div>
-                </article>
-<article class="post tag-about-ghost tag-ghost-in-depth tag-zhu-shou-han-shu">
-                  <div class="post-head">
-                    <h1 class="post-title">
-                      <a href="#">建筑装修市场 ——彰显大方时尚，富有华贵</a>
-                    </h1>
-                    <div class="post-meta">
-                       <span class="author">
-                         作者
-                        <a href="#">意灵魔法馆</a>
-                       </span>
-                       <time class="date" datetime="2016/12/29">2016年12月29日</time>
-                    </div>
-                  </div>
-                  <div class="post-content">
-          <p>建筑装修市场 ——彰显大方时尚，富有华贵
-有建筑就得有装饰，一幢建筑可以没有砖瓦，但绝少不了通透性好，既美观又实用的玻璃。商场、大型购物中心、高级写字楼、广场等，建筑物的档次越高，人们对建筑物外观质量和内在环境质量的要求也在不断提高，使装饰装修的比重，在建筑工程总造价中也不断提升，在高档建筑设施建设中，装饰装修的费用已占工程总造价的百分之四十以上。万人迷玻璃以豪华、美观、立体感强、形态各异、色彩丰富等优势，在为生活环境创造色泽斑斓的装饰效果，已经成为一种时尚的赚钱手段。 
-      </p>
-        </div>
-        <div class="post-permalink">
-          <a href="#" class="btn btn-default">阅读全文</a>
-        </div>
-        <div class="footer clearfix">
-           <hr>
-           <div class="pull-left tag-list">
-              <i class="fa fa-folder-open-o"></i>
-             <a href="#" class="btn btn-success">冰晶画</a>
-              <a href="#" class="btn btn-info">壁画</a>
-              <a href="#" class="btn btn-primary">生态画</a>
-           </div>
-        </div>
-                </article>
-<article class="post tag-about-ghost tag-ghost-in-depth tag-zhu-shou-han-shu">
-                  <div class="post-head">
-                    <h1 class="post-title">
-                      <a href="#">建筑装修市场 ——彰显大方时尚，富有华贵</a>
-                    </h1>
-                    <div class="post-meta">
-                       <span class="author">
-                         作者
-                        <a href="#">意灵魔法馆</a>
-                       </span>
-                       <time class="date" datetime="2016/12/29">2016年12月29日</time>
-                    </div>
-                  </div>
-                  <div class="post-content">
-          <p>建筑装修市场 ——彰显大方时尚，富有华贵
-有建筑就得有装饰，一幢建筑可以没有砖瓦，但绝少不了通透性好，既美观又实用的玻璃。商场、大型购物中心、高级写字楼、广场等，建筑物的档次越高，人们对建筑物外观质量和内在环境质量的要求也在不断提高，使装饰装修的比重，在建筑工程总造价中也不断提升，在高档建筑设施建设中，装饰装修的费用已占工程总造价的百分之四十以上。万人迷玻璃以豪华、美观、立体感强、形态各异、色彩丰富等优势，在为生活环境创造色泽斑斓的装饰效果，已经成为一种时尚的赚钱手段。 
-      </p>
-        </div>
-        <div class="post-permalink">
-          <a href="#" class="btn btn-default">阅读全文</a>
-        </div>
-        <div class="footer clearfix">
-           <hr>
-           <div class="pull-left tag-list">
-              <i class="fa fa-folder-open-o"></i>
-              <a href="#" class="btn btn-success">冰晶画</a>
-              <a href="#" class="btn btn-info">壁画</a>
-              <a href="#" class="btn btn-primary">生态画</a>
-           </div>
-        </div>
-                </article>
+          </article>
+         @endforeach
           <article class="">
                  <nav>
-                  <ul class="pagination">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                  </ul>
+                    <div class="list-page">
+                        {{$productList->links()}}
+                    </div>
                 </nav>
           </article>
              </main>
@@ -343,14 +276,14 @@
      <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
 
     <script>
-       layer.ready(function(){ //为了layer.ext.js加载完毕再执行
-              layer.open({
-                 title:'<div style="font-size:15px;">意灵玻艺装饰工坊</div>',
-                 type:0,
-                 content:'<div style="color:#FF6633;">欢迎来到意灵玻艺装饰工坊</div>'
-            }); 
+       // layer.ready(function(){ //为了layer.ext.js加载完毕再执行
+       //        layer.open({
+       //           title:'<div style="font-size:15px;">意灵玻艺装饰工坊</div>',
+       //           type:0,
+       //           content:'<div style="color:#FF6633;">欢迎来到意灵玻艺装饰工坊</div>'
+       //      }); 
 
-        });      
+       //  });      
       $('.carousel').carousel({
         interval:2000
       })

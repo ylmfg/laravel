@@ -51,23 +51,28 @@ class ZuoPingController extends Controller
         $rules= [    
                       'cate_id'=>'required',
                       'title'=>'required',
-                      'price'=>'required|numeric',
+                      'old_price'=>'required|numeric',
                       'keyword'=>'required',
                       'thumb'=>'required',
+                      'intro'=>'required',
                       'content'=>'required'   
                 ];
         //验证消息
         $message=[
                      'cate_id.required'=>'分类必填!',
                      'title.required'=>'标题必填!',
-                     'price.required'=>'价格必填!',
-                     'price.numeric'=>'价格必须是数字',
+                     'old_price.required'=>'价格必填!',
+                     'old_price.numeric'=>'价格必须是数字',
                      'keyword.required'=>'关键字必填!',
                      'thumb.required'=>'图片必选!',
+                     'intro.required'=>'简介必填',
                      'content.required'=>'内容必填!'
         ];
         //接受数据
         $data=$request->except('_token');
+        if(empty($data['current_price'])){
+            $data['current_price']=null;
+        }
         $data['thumb']=implode('|',$data['thumb']);
         //验证数据
         $validate=Validator::make($data,$rules,$message);
@@ -82,9 +87,10 @@ class ZuoPingController extends Controller
                   ->update(
                     [
                     'title'=>$data['title'],
-                    'price'=>$data['price'],
+                    'current_price'=>$data['current_price'],
                     'keyword'=>$data['keyword'],
                     'thumb'=>$data['thumb'],
+                    'intro'=>$data['intro'],
                     'content'=>$data['content'],
                     'uptime'=>time(),
                     ]);
@@ -99,9 +105,10 @@ class ZuoPingController extends Controller
               [
               'cate_id'=>$data['cate_id'],
               'title'=>$data['title'],
-              'price'=>$data['price'],
+              'old_price'=>$data['old_price'],
               'keyword'=>$data['keyword'],
               'thumb'=>$data['thumb'],
+              'intro'=>$data['intro'],
               'content'=>$data['content'],
               'uptime'=>time(),
               'status'=>0,

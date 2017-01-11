@@ -19,6 +19,7 @@ Route::any("bjh","IndexHome\BjhController@index");
 Route::any('senth',"IndexHome\SenthController@index");
 Route::any('yishuh',"IndexHome\YishuhController@index");
 Route::any('upload',"Common\CommonController@upload");
+Route::any('detail/{productId}',"IndexHome\IndexHomeController@detail");
 //后台
 Route::any('admin',"AdminHome\AdminHomeController@admin");
 Route::post('login',"AdminHome\AdminHomeController@login");

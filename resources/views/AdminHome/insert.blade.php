@@ -124,7 +124,7 @@
                             </tr>
                              <tr>
                                 <th><i class="require-red">*</i>价格：</th>
-                                <td><input class="common-text" name="price" size="50" value="" type="text"></td>
+                                <td><input class="common-text" name="old_price" size="50" value="" type="text"></td>
                             </tr>
                               <tr>
                                 <th>关键词<i class="require-red">(逗号分隔)</i></th>
@@ -134,6 +134,12 @@
                                 <th><i class="require-red">*</i>缩略图：</th>
                                 <td>
                                 <input name="Filedata" id="uploadify" type="file">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>简介：</th>
+                                <td>
+                                <textarea name="intro" rows="15" cols="120"></textarea>
                                 </td>
                             </tr>
                             <tr>

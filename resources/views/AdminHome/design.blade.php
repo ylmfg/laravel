@@ -17,6 +17,9 @@
         .list-page ul li span{
             padding:6px 5px;
         }
+        .current_price{
+            color:red;
+        }
     </style>
 </head>
 <body>
@@ -113,7 +116,8 @@
                             <th>ID</th>
                             <th>封面图片</th>
                             <th>标题</th>
-                            <th>价格(元)</th>
+                            <th>原价(元)</th>
+                            <th>现价(元)</th>
                             <th>分类栏目</th>
                             <th>审核状态</th>
                             <th>发布人</th>
@@ -127,7 +131,14 @@
                             <td><img src="/{{$product->thumb[0]}}" width="100" height="100"></td>
                             <td title="{{$product->title}}"><a target="_blank" href="#" title="{{$product->title}}">{{$product->title}}</a>
                             </td>
-                            <td>{{$product->price}}</td>
+                            <td>{{$product->old_price}}</td>
+                            <td>
+                              @if($product->current_price)
+                                <span class="current_price">{{$product->current_price}}</span>
+                                @else
+                                 现价暂未调整
+                              @endif
+                            </td>
                             <td>{{$product->cate_title}}</td>
                             <td>
                                 @if(0==$product->status)

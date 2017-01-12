@@ -136,17 +136,18 @@
                                 <input name="Filedata" id="uploadify" type="file">
                                 </td>
                             </tr>
+                                <tr>
+                                <th></th>
+                                <td id="thumb">
+                                </td>
+                            </tr>
                             <tr>
                                 <th><i class="require-red">*</i>简介：</th>
                                 <td>
                                 <textarea name="intro" rows="15" cols="120"></textarea>
                                 </td>
                             </tr>
-                            <tr>
-                                <th></th>
-                                <td id="thumb">
-                                </td>
-                            </tr>
+                        
                             <tr>
                                 <th>内容：</th>
                                 <td>

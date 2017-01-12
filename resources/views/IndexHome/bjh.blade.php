@@ -2,6 +2,7 @@
 <html>
 	<head lang="en">
 	    <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title></title>
         <script type="text/javascript" src="{{asset('/IndexHome/js/jquery-2.0.3.min.js')}}"></script>
         <link rel="stylesheet" href="{{asset('/IndexHome/css/bootstrap.min.css')}}">
@@ -28,7 +29,7 @@
           </div>
          </div>
        </header>
-     <nav class="main-navigation" style="margin-bottom: -3px;">
+     <nav class="main-navigation" >
            <div class="container">
              <div class="row">
               <div class="col-md-12">
@@ -40,7 +41,7 @@
                     <i class="fa fa-bars"></i>
                   </span>
                 </div>
-                <div class="collapse navbar-collapse" id="main-menu">
+                <div class="collapse navbar-collapse" id="main-menu" style="z-index:999">
                     <ul class="menu">
                       <li class="" role="presentation">
                         <a href="{{url('/')}}">首页</a>
@@ -72,69 +73,26 @@
   <div class="ct-pageWrapper">
   <main>
   <div class="container">
-    <div class="row">
-    <div class="col-md-3">
-      <div class="widget">
-      <h2 class="widget-header">购物车</h2>
-      <div class="ct-cart"></div>
-      </div>
-    </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
       <div class="row">
+      @foreach($productList as $product)
       <div class="col-sm-4">
         <div class="ct-product">
-        <div class="image"><img src="{{asset('IndexHome/images/product-01.jpg')}}" alt=""></div>
-        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
-          <h2 class="ct-product-title">Box of macaroons</h2>
-          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$19.99</span>
+        <div class="image"><img src="/{{$product->thumb[0]}}" alt="" height="300"></div>
+        <div class="inner"><a href="{{url('cart')}}" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
+          <h2 class="ct-product-title">{{$product->title}}</h2>
+          <p class="ct-product-description">{{$product->intro}}</p>
+          <span class="ct-product-price">
+          @if($product->current_price)
+             ￥{{$product->current_price}}
+            @else
+            ￥{{$product->old_price}}
+          @endif
+          </span>
         </div>
         </div>
       </div>
-      <div class="col-sm-4">
-        <div class="ct-product">
-        <div class="image"><img src="{{asset('IndexHome/images/product-02.jpg')}}" alt=""></div>
-        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
-          <h2 class="ct-product-title">Cherry Straws</h2>
-          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$34.99</span>
-        </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="ct-product">
-        <div class="image"><img src="{{asset('IndexHome/images/product-03.jpg')}}" alt=""></div>
-        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
-          <h2 class="ct-product-title">Coffee Macaroons</h2>
-          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$59.99</span>
-        </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="ct-product">
-        <div class="image"><img src="{{asset('IndexHome/images/product-04.jpg')}}" alt=""></div>
-        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
-          <h2 class="ct-product-title">Finetti ones</h2>
-          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$9.99</span>
-        </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="ct-product">
-        <div class="image"><img src="{{asset('IndexHome/images/product-05.jpg')}}" alt=""></div>
-        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
-          <h2 class="ct-product-title">Minty duo</h2>
-          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$3.99</span>
-        </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="ct-product">
-        <div class="image"><img src="{{asset('IndexHome/images/product-06.jpg')}}" alt=""></div>
-        <div class="inner"><a href="#" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
-          <h2 class="ct-product-title">Pistachio</h2>
-          <p class="ct-product-description">A very delicious macaroons ...</p><span class="ct-product-price">$13.99</span>
-        </div>
-        </div>
-      </div>
+      @endforeach
       </div>
     </div>
     </div>
@@ -143,14 +101,8 @@
   </div>
    </body>
 <script>
-$('body').ctshop({
-  currency: '￥',
-  paypal: {
-  currency_code: 'EUR'
-  }
-});
 $('.col-sm-4').on('click',function(){
     //跳转页面
-})
+});
 </script>
    </html>

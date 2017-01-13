@@ -19,9 +19,6 @@ class IndexHomeController extends Controller
    public function customer(){
    	return view('IndexHome/customer');
    }
-   public function cart(){
-   	 echo "欢迎来到购物车";
-   }
    public function detail($productId){
       $product=DB::table('production')->find($productId);
       return view('IndexHome/detail',['product'=>$product]);

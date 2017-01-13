@@ -187,6 +187,7 @@
                 </nav>
           </article>
     </body>
+       @include('IndexHome.footer')
     <script>
         $(function(){
           layer.ready(function(){ //为了layer.ext.js加载完毕再执行

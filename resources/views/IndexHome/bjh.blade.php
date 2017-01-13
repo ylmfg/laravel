@@ -11,7 +11,6 @@
        <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
        <link rel="stylesheet" type="text/css" href="http://libs.useso.com/js/font-awesome/4.2.0/css/font-awesome.min.css">
        <link rel="stylesheet" type="text/css" href="{{asset('/IndexHome/css/style.css')}}">
-       <script type="text/javascript" src="{{asset('/IndexHome/js/shop.min.js')}}"></script>
       <style>
 
       </style>
@@ -79,7 +78,8 @@
       <div class="col-sm-4">
         <div class="ct-product">
         <div class="image"><img src="/{{$product->thumb[0]}}" alt="" height="300"></div>
-        <div class="inner"><a href="{{url('cart')}}" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart"></i></a>
+        <div class="inner">
+        <a href="javascript:;" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart" data-toggle="{{$product->id}}"></i></a>
           <h2 class="ct-product-title">{{$product->title}}</h2>
           <p class="ct-product-description">{{$product->intro}}</p>
           <span class="ct-product-price">
@@ -99,10 +99,18 @@
   </div>
   </main>
   </div>
+     @include('IndexHome.footer')
    </body>
-<script>
-$('.col-sm-4').on('click',function(){
-    //跳转页面
-});
-</script>
+  <script type="text/javascript">
+    $('.fa-shopping-cart').on('click',function(){
+      var url="{{url('cart')}}";
+      var data={
+        'productId':$(this).attr('data-toggle'),
+        '_token':"{{csrf_token()}}",
+      }
+      $.post(url,data,function(response){
+
+      });
+    });
+  </script>
    </html>

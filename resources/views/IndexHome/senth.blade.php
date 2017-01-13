@@ -105,6 +105,7 @@
         </ul>
     </div>
    </body>
+      @include('IndexHome.footer')
    <script type="text/javascript">
    layui.use('flow', function(){
        var flow = layui.flow;

@@ -140,4 +140,5 @@
    </div>
 
    </body>
+      @include('IndexHome.footer')
    </html>

@@ -14,7 +14,7 @@ html,body{
 .mian-header .branding{
 	font-size:3.5em;
 	color:#303030;
-}
+  }
 a{
 	color:#e67e22;
 	outline: none;
@@ -22,7 +22,7 @@ a{
 }
 .main-header .branding img{
 	 max-width:100%;
-	 margin-bottom: 10px;
+	 margin-top: 227px;
 }
 a:active,a:focus,a img{
 	outline:none;

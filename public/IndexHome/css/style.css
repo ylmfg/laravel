@@ -91,10 +91,15 @@ main .ct-product .inner .ct-product-title {
   margin-bottom: 15px;
   text-align: center;
 }
-main .ct-product .inner .ct-product-description{
+/*main .ct-product .inner .ct-product-description{
 white-space:nowrap; 
 text-overflow:ellipsis; 
 -o-text-overflow:ellipsis; 
+overflow: hidden;
+}*/
+main .ct-product .inner .ct-product-description{
+height: 75px;
+text-overflow:ellipsis; 
 overflow: hidden;
 }
 main .ct-product .inner .ct-product-price {

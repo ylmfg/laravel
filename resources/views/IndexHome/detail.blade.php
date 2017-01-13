@@ -71,5 +71,6 @@
         <div class="col-md-12">{!!$product->content!!}</div>
      </div>
    </div>
+      @include('IndexHome.footer')
 </body>
 </html>

@@ -22,12 +22,12 @@ Route::any('upload',"Common\CommonController@upload");
 Route::any('detail/{productId}',"IndexHome\IndexHomeController@detail");
 //后台
 Route::any('admin',"AdminHome\AdminHomeController@admin");
-Route::post('login',"AdminHome\AdminHomeController@login");
+Route::post('Adminlogin',"AdminHome\AdminHomeController@login");
 Route::any('index',"AdminHome\AdminHomeController@index");
 Route::any('zuoping/{cateId?}',"AdminHome\ZuoPingController@zuoping");
 Route::any('insert',"AdminHome\ZuoPingController@insert");
 Route::any('system',"AdminHome\SystemController@system");
-Route::any('loginout',"AdminHome\AdminHomeController@loginout");
+Route::any('Adminloginout',"AdminHome\AdminHomeController@loginout");
 Route::any('category',"AdminHome\CategoryController@category");
 Route::any('insertCate',"AdminHome\CategoryController@insertCate");
 Route::any('cateProccess',"AdminHome\CategoryController@cateProccess");
@@ -35,3 +35,6 @@ Route::any('editCate/cateId/{cateId}',"AdminHome\CategoryController@editCate");
 Route::any('delCate/cateId/{cateId}',"AdminHome\CategoryController@delCate");
 Route::any('insertProccess',"AdminHome\ZuoPingController@insertProccess");
 Route::any('editProduct/productId/{productId}',"AdminHome\ZuoPingController@editProduct");
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

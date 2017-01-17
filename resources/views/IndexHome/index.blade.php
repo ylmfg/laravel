@@ -58,6 +58,13 @@
                       <li  role="presentation" >
                         <a href="{{url('cart')}}">我的购物车<span class="badge">4</span></a>
                       </li>
+                      @if(Auth::check())
+                         <li ><a href="{{ url('/logout') }}">loginout</a></li>
+                         <li class="label label-info ">欢迎{{$userData->name}}!</li>
+                        @else
+                         <li class=""><a href="{{ url('/login') }}">Login</a></li>
+                         <li ><a href="{{ url('/register') }}">Register</a></li>
+                      @endif
                     </ul>
                 </div>
          	 	 	</div>

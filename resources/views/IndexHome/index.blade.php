@@ -100,9 +100,9 @@
            <hr>
            <div class="pull-left tag-list">
               <i class="fa fa-folder-open-o"></i>
-              <a href="#" class="btn btn-success">冰晶画</a>
-              <a href="#" class="btn btn-info">壁画</a>
-              <a href="#" class="btn btn-primary">生态画</a>
+              @foreach($product->keyword as $v)
+              <a href="javascript:;" class="btn btn-warning">{{$v}}</a>
+              @endforeach
            </div>
         </div>
           </article>
@@ -133,30 +133,46 @@
              </ol>
 
              <div class="carousel-inner">
-                  <div class="item active">
-                    <img src="{{asset('/IndexHome/images/thumb1.jpg')}}" width="300px">
-                    <div class="carousel-caption">
-                      <h3>艺术玻璃</h3>
-                      <p>艺术玻璃推出新品</p>
-                    </div>
+                   <div class="item active">
+                    <img src="{{asset('/IndexHome/images/thumb1.jpg')}}"  >
+                  
+                  </div>
+                    <div class="item ">
+                    <img src="{{asset('/IndexHome/images/thumb2.jpg')}}"  >
+               
+                  </div>
+                    <div class="item ">
+                    <img src="{{asset('/IndexHome/images/thumb3.jpg')}}"  >
+                   
+                  </div>
+                    <div class="item ">
+                    <img src="{{asset('/IndexHome/images/thumb4.jpg')}}"  >
+                 
                   </div>
                   <div class="item ">
-                    <img src="{{asset('/IndexHome/images/thumb2.jpg')}}" width="300px">
+                    <img src="{{asset('/IndexHome/images/thumb5.jpg')}}"  >
+                 
+                  </div>
+                  <div class="item ">
+                    <img src="{{asset('/IndexHome/images/thumb6.jpg')}}"  >
+                
+                  </div>
+                    <div class="item ">
+                    <img src="{{asset('/IndexHome/images/thumb7.jpg')}}"  >
+                  
+                  </div>
+                  <div class="item ">
+                    <img src="{{asset('/IndexHome/images/thumb8.jpg')}}"  >
+                  
+                  </div>
+                  <div class="item">
+                    <img src="{{asset('/IndexHome/images/thumb9.jpg')}}"  >
                     <div class="carousel-caption">
-                      <h3>
-                      冰晶画
-                      </h3>
-                      <p>新品类</p>
                     </div> 
                   </div>
                   <div class="item ">
-                    <img src="{{asset('/IndexHome/images/thumb3.jpg')}}" width="300px">
-                    <div class="carousel-caption">
-                    <h3>
-                      瓷砖画
-                      </h3>
-                      <p>瓷砖画低价了</p>
-                    </div>
+                    <img src="{{asset('/IndexHome/images/thumb10.jpg')}}"  >
+              
                   </div>
              </div>
      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">

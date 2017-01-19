@@ -13,6 +13,10 @@ class IndexHomeController extends Controller
    public function index(){
       $userData=Auth::user();
       $productList=DB::table('production')->paginate(3);
+
+      foreach($productList as $product){
+         $product->keyword=explode(',',$product->keyword);
+      }
    	return view('IndexHome/index',['productList'=>$productList,'userData'=>$userData]);
    }
    public function photoWall(){

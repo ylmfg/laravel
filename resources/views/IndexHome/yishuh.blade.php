@@ -2,11 +2,11 @@
 <html>
 	<head lang="en">
 	    <meta charset="UTF-8">
-
         <title></title>
         <script type="text/javascript" src="{{asset('/IndexHome/js/jquery-2.0.3.min.js')}}"></script>
         <link rel="stylesheet" href="{{asset('/IndexHome/css/bootstrap.min.css')}}">
        <script type="text/javascript" src="{{asset('/IndexHome/js/bootstrap.min.js')}}"></script>
+       <script src="{{asset('/IndexHome/js/jcMarquee.js')}}" type="text/javascript"></script>
        <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
        <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
       <style>
@@ -16,7 +16,18 @@
       .currentPrice{
         color:red;
       }
+      #Marquee_x { overflow:hidden; width:100% } 
+      #Marquee_x ul li ,#Marquee_x ul li div{ float:left;line-height:25px;overflow:hidden} /* 横向滚动必须让所有li左浮动 */
+      #Marquee_x ul li div{ float:left;line-height:25px;height:100%; width:180px; overflow:hidden}
+      #Marquee_x ul li div img{ border:1px solid #DADADA; width:100%; display:block}
+      #Marquee_x ul li div span{ display:block;}
       </style>
+      <script>
+ $(function(){
+    $('#Marquee_x').jcMarquee({ 'marquee':'x','margin_right':'10px','speed':20 });
+  // DIVCSS5提示：10px代表间距，第二个20代表滚动速度
+});
+</script>
 	</head>
     <body>
      <header class="main-header">
@@ -74,8 +85,89 @@
    </nav>
    <div class="container">
       <div class="row">
+         <div class="col-md-12" id="Marquee_x">
+           <!--焦点图-->
+           <ul>
+            <li>
+                <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb1.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb2.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+              <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb3.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb4.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+              <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb5.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb6.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+              <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb7.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb8.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb9.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb10.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb11.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+                 <div>
+                    <a href="{{url('/')}}" target="_blank">
+                       <img src="{{asset('/IndexHome/images/thumb12.jpg')}}" />
+                       <span class="text-center">意灵玻艺装饰工坊</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+         </div>
+      </div>
+      <div class="row">
           <div class="col-md-7 thumbnail">
-            <img src="{{asset('/IndexHome/images/thumb3.jpg')}}"  width="95%">
+            <img src="{{asset('/IndexHome/images/thumb3.jpg')}}"  width="80%" >
           </div>
           <div class="col-md-5">
             <h2>广告灯箱市场——彰显艺术效果，先声夺人</h2>
@@ -92,7 +184,7 @@
       </div>
             <div class="row">
           <div class="col-md-7 thumbnail">
-            <img src="{{asset('/IndexHome/images/thumb2.jpg')}}"  width="95%">
+            <img src="{{asset('/IndexHome/images/thumb2.jpg')}}"  width="80%">
           </div>
           <div class="col-md-5">
             <h2>广告灯箱市场——彰显艺术效果，先声夺人</h2>
@@ -109,7 +201,7 @@
       </div>
           <div class="row">
           <div class="col-md-7 thumbnail">
-            <img src="{{asset('/IndexHome/images/thumb4.jpg')}}" width="95%">
+            <img src="{{asset('/IndexHome/images/thumb4.jpg')}}" width="80%">
           </div>
           <div class="col-md-5">
             <h2>广告灯箱市场——彰显艺术效果，先声夺人</h2>

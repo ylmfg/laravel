@@ -75,8 +75,8 @@
                   <div class="col-md-4 text-center col-xs-4 thumbnail">
                   <figure class="imghvr-flip-diag-1">
                            <img src="{{asset('/IndexHome/images/thumb1.jpg')}}">
-                      <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/IndexHome/images/thumb3.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb12.jpg')}}">
                       </figcaption>
                   </figure>
                           <div class="caption">
@@ -92,8 +92,8 @@
                  <div class="col-md-4 text-center col-xs-4 thumbnail">
                             <figure class="imghvr-flip-diag-1">
                            <img src="{{asset('/IndexHome/images/thumb2.jpg')}}">
-                      <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/IndexHome/images/thumb2.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb11.jpg')}}">
                       </figcaption>
                   </figure>
                           <div class="caption">
@@ -108,8 +108,8 @@
                   <div class="col-md-4 text-center col-xs-4 thumbnail">
                             <figure class="imghvr-flip-diag-1">
                            <img src="{{asset('/IndexHome/images/thumb3.jpg')}}">
-                      <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/IndexHome/images/thumb1.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb10.jpg')}}">
                       </figcaption>
                   </figure>
                          <div class="caption">
@@ -125,9 +125,9 @@
                 <div class="row">
                   <div class="col-md-4 text-center col-xs-4 thumbnail">
                            <figure class="imghvr-flip-diag-1">
-                           <img src="{{asset('/IndexHome/images/thumb1.jpg')}}">
-                      <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/IndexHome/images/thumb3.jpg')}}">
+                           <img src="{{asset('/IndexHome/images/thumb4.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb9.jpg')}}">
                       </figcaption>
                   </figure>
                           <div class="caption">
@@ -141,9 +141,9 @@
                   </div>
                  <div class="col-md-4 text-center col-xs-4 thumbnail">
                            <figure class="imghvr-flip-diag-2">
-                           <img src="{{asset('/IndexHome/images/thumb2.jpg')}}">
-                      <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/IndexHome/images/thumb2.jpg')}}">
+                           <img src="{{asset('/IndexHome/images/thumb5.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb8.jpg')}}">
                       </figcaption>
                   </figure>
                          <div class="caption">
@@ -157,12 +157,108 @@
                   </div>
                   <div class="col-md-4 text-center col-xs-4 thumbnail">
                            <figure class="imghvr-flip-diag-1">
-                           <img src="{{asset('/IndexHome/images/thumb3.jpg')}}">
-                      <figcaption style="margin:0;padding:0; ">
-                             <img src="{{asset('/IndexHome/images/thumb1.jpg')}}">
+                           <img src="{{asset('/IndexHome/images/thumb6.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb7.jpg')}}">
                       </figcaption>
                   </figure>
                         <div class="caption">
+                              <h3>灵感,创意</h3>
+                              <p>传递灵感创意呈现智慧与生活</p>
+                              <p>
+                              <button  class="btn btn-info btn-xs" type="button">赞同</button>
+                              <button  class="btn btn-success btn-xs" type="button">不赞同</button>
+                              </p>
+                          </div>
+                  </div>
+                <div class="col-md-4 text-center col-xs-4 thumbnail">
+                           <figure class="imghvr-flip-diag-1">
+                           <img src="{{asset('/IndexHome/images/thumb7.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb6.jpg')}}">
+                      </figcaption>
+                  </figure>
+                          <div class="caption">
+                              <h3>灵感,创意</h3>
+                              <p>传递灵感创意呈现智慧与生活</p>
+                              <p>
+                              <button  class="btn btn-info btn-xs" type="button">赞同</button>
+                              <button  class="btn btn-success btn-xs" type="button">不赞同</button>
+                              </p>
+                          </div>
+                  </div>
+                  <div class="col-md-4 text-center col-xs-4 thumbnail">
+                           <figure class="imghvr-flip-diag-1">
+                           <img src="{{asset('/IndexHome/images/thumb8.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb5.jpg')}}">
+                      </figcaption>
+                  </figure>
+                          <div class="caption">
+                              <h3>灵感,创意</h3>
+                              <p>传递灵感创意呈现智慧与生活</p>
+                              <p>
+                              <button  class="btn btn-info btn-xs" type="button">赞同</button>
+                              <button  class="btn btn-success btn-xs" type="button">不赞同</button>
+                              </p>
+                          </div>
+                  </div>
+                  <div class="col-md-4 text-center col-xs-4 thumbnail">
+                           <figure class="imghvr-flip-diag-1">
+                           <img src="{{asset('/IndexHome/images/thumb9.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb4.jpg')}}">
+                      </figcaption>
+                  </figure>
+                          <div class="caption">
+                              <h3>灵感,创意</h3>
+                              <p>传递灵感创意呈现智慧与生活</p>
+                              <p>
+                              <button  class="btn btn-info btn-xs" type="button">赞同</button>
+                              <button  class="btn btn-success btn-xs" type="button">不赞同</button>
+                              </p>
+                          </div>
+                  </div>
+                <div class="col-md-4 text-center col-xs-4 thumbnail">
+                           <figure class="imghvr-flip-diag-1">
+                           <img src="{{asset('/IndexHome/images/thumb10.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb3.jpg')}}">
+                      </figcaption>
+                  </figure>
+                          <div class="caption">
+                              <h3>灵感,创意</h3>
+                              <p>传递灵感创意呈现智慧与生活</p>
+                              <p>
+                              <button  class="btn btn-info btn-xs" type="button">赞同</button>
+                              <button  class="btn btn-success btn-xs" type="button">不赞同</button>
+                              </p>
+                          </div>
+                  </div>
+                  <div class="col-md-4 text-center col-xs-4 thumbnail">
+                           <figure class="imghvr-flip-diag-1">
+                           <img src="{{asset('/IndexHome/images/thumb11.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb2.jpg')}}">
+                      </figcaption>
+                  </figure>
+                          <div class="caption">
+                              <h3>灵感,创意</h3>
+                              <p>传递灵感创意呈现智慧与生活</p>
+                              <p>
+                              <button  class="btn btn-info btn-xs" type="button">赞同</button>
+                              <button  class="btn btn-success btn-xs" type="button">不赞同</button>
+                              </p>
+                          </div>
+                  </div>
+                  <div class="col-md-4 text-center col-xs-4 thumbnail">
+                           <figure class="imghvr-flip-diag-1">
+                           <img src="{{asset('/IndexHome/images/thumb12.jpg')}}">
+                      <figcaption class="imghvr-flip-diag-1" style="padding:0;margin: 0;">
+                             <img src="{{asset('/IndexHome/images/thumb1.jpg')}}">
+                      </figcaption>
+                  </figure>
+                          <div class="caption">
                               <h3>灵感,创意</h3>
                               <p>传递灵感创意呈现智慧与生活</p>
                               <p>

@@ -76,30 +76,39 @@
     <div class="container">
       <ul class="flow-default" id="LAY_demo1">
             <li class="col-md-4 col-xs-4">
+              <img src="{{asset('/IndexHome/images/thumb12.jpg')}}" width="98%">
+            </li>
+            <li class="col-md-4 col-xs-4">
+              <img src="{{asset('/IndexHome/images/thumb11.jpg')}}" width="98%">
+            </li>
+              <li class="col-md-4 col-xs-4">
+              <img src="{{asset('/IndexHome/images/thumb10.jpg')}}" width="98%">
+            </li>
+            <li class="col-md-4 col-xs-4">
+              <img src="{{asset('/IndexHome/images/thumb9.jpg')}}" width="98%">
+            </li>
+            <li class="col-md-4 col-xs-4">
+              <img src="{{asset('/IndexHome/images/thumb8.jpg')}}" width="98%">
+            </li>
+              <li class="col-md-4 col-xs-4">
+              <img src="{{asset('/IndexHome/images/thumb7.jpg')}}" width="98%">
+            </li>
+            <li class="col-md-4 col-xs-4">
+              <img src="{{asset('/IndexHome/images/thumb6.jpg')}}" width="98%">
+            </li>
+            <li class="col-md-4 col-xs-4">
+              <img src="{{asset('/IndexHome/images/thumb5.jpg')}}" width="98%">
+            </li>
+              <li class="col-md-4 col-xs-4">
+              <img src="{{asset('/IndexHome/images/thumb4.jpg')}}" width="98%">
+            </li>
+            <li class="col-md-4 col-xs-4">
               <img src="{{asset('/IndexHome/images/thumb3.jpg')}}" width="98%">
             </li>
             <li class="col-md-4 col-xs-4">
               <img src="{{asset('/IndexHome/images/thumb2.jpg')}}" width="98%">
             </li>
-              <li class="col-md-4 col-xs-4">
-              <img src="{{asset('/IndexHome/images/thumb1.jpg')}}" width="98%">
-            </li>
             <li class="col-md-4 col-xs-4">
-              <img src="{{asset('/IndexHome/images/thumb3.jpg')}}" width="98%">
-            </li>
-            <li class="col-md-4 col-xs-4">
-              <img src="{{asset('/IndexHome/images/thumb2.jpg')}}" width="98%">
-            </li>
-              <li class="col-md-4 col-xs-4">
-              <img src="{{asset('/IndexHome/images/thumb1.jpg')}}" width="98%">
-            </li>
-            <li class="col-md-4 col-xs-4">
-              <img src="{{asset('/IndexHome/images/thumb3.jpg')}}" width="98%">
-            </li>
-            <li class="col-md-4 col-xs-4">
-              <img src="{{asset('/IndexHome/images/thumb2.jpg')}}" width="98%">
-            </li>
-              <li class="col-md-4 col-xs-4">
               <img src="{{asset('/IndexHome/images/thumb1.jpg')}}" width="98%">
             </li>
         </ul>

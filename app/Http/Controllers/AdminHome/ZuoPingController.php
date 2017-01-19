@@ -74,6 +74,7 @@ class ZuoPingController extends Controller
             $data['current_price']=null;
         }
         $data['thumb']=implode('|',$data['thumb']);
+        $data['keyword']=str_replace('，',',',$data['keyword']);
         //验证数据
         $validate=Validator::make($data,$rules,$message);
         if($validate->fails()){

@@ -22,10 +22,10 @@ class CommonController extends Controller
             //制作缩略图
 
             //Image::configure(array('driver' => 'imagick'));
-            $img = Image::make($filePath)->resize(300, 200);
-                   die('ok');
+            // $img = Image::make($filePath)->resize(300, 200);
+            //        die('ok');
             
-            $img->save(base_path().'/'.$thumbPath);
+            // $img->save(base_path().'/'.$thumbPath);
             return $filePath;
         }
     }

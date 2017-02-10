@@ -21,7 +21,7 @@
             <ul class="top-info-list clearfix">
                 <li><a href="http://www.jscss.me">管理员</a></li>
                 <li><a href="http://www.jscss.me">修改密码</a></li>
-                <li><a href="{{url('loginout')}}">退出</a></li>
+                <li><a href="{{url('Adminloginout')}}">退出</a></li>
             </ul>
         </div>
     </div>

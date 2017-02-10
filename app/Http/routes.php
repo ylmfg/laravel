@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +20,7 @@ Route::any('senth',"IndexHome\SenthController@index");
 Route::any('yishuh',"IndexHome\YishuhController@index");
 Route::any('upload',"Common\CommonController@upload");
 Route::any('detail/{productId}',"IndexHome\IndexHomeController@detail");
+Route::any('bjhDetial/productId/{id}',"IndexHome\BjhController@detail");
 //后台
 Route::any('admin',"AdminHome\AdminHomeController@admin");
 Route::post('Adminlogin',"AdminHome\AdminHomeController@login");
@@ -37,4 +38,9 @@ Route::any('insertProccess',"AdminHome\ZuoPingController@insertProccess");
 Route::any('editProduct/productId/{productId}',"AdminHome\ZuoPingController@editProduct");
 Route::auth();
 
+
 Route::get('/home', 'HomeController@index');
+// Route::resource('test','TestController');
+Route::resource('tangshuai','TestController');
+
+

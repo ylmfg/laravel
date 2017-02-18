@@ -20,4 +20,7 @@ class BjhController extends Controller
         }
     	return view('IndexHome/bjh',['productList'=>$productList]);
     }
+    public function detail($productId){
+        return view('IndexHome/bjhDetail');
+    }
 }

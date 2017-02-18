@@ -79,7 +79,7 @@
         <div class="ct-product">
         <div class="image"><img src="/{{$product->thumb[0]}}" alt="" height="300"></div>
         <div class="inner">
-        <a href="javascript:;" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart" data-toggle="{{$product->id}}"></i></a>
+        <a href="{{url('bjhDetial/productId',['productId'=>$product->id])}}" class="btn btn-motive ct-product-button"><i class="fa fa-shopping-cart" data-toggle="{{$product->id}}"></i></a>
           <h2 class="ct-product-title">{{$product->title}}</h2>
           <p class="ct-product-description">{{$product->intro}}</p>
           <span class="ct-product-price">

@@ -15,7 +15,7 @@ class TestController extends Controller
      */
     public function index()
     {
-        //
+        echo "index";
     }
 
     /**
@@ -26,6 +26,7 @@ class TestController extends Controller
     public function create()
     {
         //
+        echo "create";
     }
 
     /**
@@ -45,10 +46,11 @@ class TestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    // public function show($id)
+    // {
+    //     //
+    //     echo "show".$id;
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -59,6 +61,7 @@ class TestController extends Controller
     public function edit($id)
     {
         //
+        echo "edit".$id;
     }
 
     /**
@@ -71,6 +74,7 @@ class TestController extends Controller
     public function update(Request $request, $id)
     {
         //
+        echo "update".$id;
     }
 
     /**
@@ -82,5 +86,6 @@ class TestController extends Controller
     public function destroy($id)
     {
         //
+        echo "destroy".$id;
     }
 }

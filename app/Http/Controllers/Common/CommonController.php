@@ -17,7 +17,7 @@ class CommonController extends Controller
             $entension = $file -> getClientOriginalExtension();//获取图片的格式
             $newName=date('YmdHis').mt_rand(100,999).'.'.$entension;
             $path=$file->move(base_path().'/upload',$newName);//文件存储地址
-            $filePath='upload/'.$newName;
+            $filePath='/upload/'.$newName;
             $thumbPath='thumb/'.$newName;
             //制作缩略图
 

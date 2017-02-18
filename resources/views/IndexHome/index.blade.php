@@ -8,7 +8,7 @@
 		 <title></title>
 		 <link  href="{{asset('/IndexHome/css/bootstrap.min.css')}}" rel="stylesheet">
 		 <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
-      
+  
 	</head>
     <body class="home-template">
     	 <header class="main-header">

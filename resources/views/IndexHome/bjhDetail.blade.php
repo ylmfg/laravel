@@ -75,15 +75,53 @@
            </div>
    </nav>
    <div class="container">
-      <div class="row">
-         <div class="col-md-7">
-           <div >
-           <img src="http://img05.tooopen.com/images/20150531/tooopen_sy_127457023651.jpg" width="100%"></div>
-           <div class="left-ft">
-              <img src="http://tupian.enterdesk.com/2012/0606/gha/10/11285966_1334673509285.jpg" width="40%">
-              <img src="http://s9.knowsky.com/bizhi/l/1-5000/200952813914808809875.jpg" width="40%">
+      <div class="row box">
+        <div class="col-md-7">
+         <div class="box">
+          <div class="tb-booth tb-pic tb-s310">
+                <a href="images/01.jpg">
+                    <img src="images/01_mid.jpg" alt="美女" rel="images/01.jpg" class="jqzoom" />
+                </a>
+          </div>
+          <ul class="tb-thumb" id="thumblist">
+           <li class="tb-selected">
+                <div class="tb-pic tb-s40">
+                   <a href="#">
+                      <img src="images/01_small.jpg" mid="images/01_mid.jpg" big="images/01.jpg">
+                   </a>
+                </div>
+           </li>
+           <li>
+              <div class="tb-pic tb-s40">
+                  <a href="#">
+                     <img  src="images/02_small.jpg" mid="images/02_mid.jpg" big="images/02.jpg">
+                  </a>
+              </div>
+          </li>
+          <li>
+             <div class="tb-pic tb-s40">
+                <a href="#">
+                    <img src="images/03_small.jpg" mid="images/03_mid.jpg" big="images/03.jpg">
+                </a>
+            </div>
+          </li>
+         <li>
+            <div class="tb-pic tb-s40">
+               <a href="#">
+                  <img src="images/04_small.jpg" mid="images/04_mid.jpg" big="images/04.jpg">
+              </a>
+            </div>
+        </li>
+        <li>
+           <div class="tb-pic tb-s40">
+               <a href="#">
+                  <img src="images/05_small.jpg" mid="images/05_mid.jpg" big="images/05.jpg">
+               </a>
            </div>
-         </div>
+        </li>
+       </ul>
+   </div>
+</div>
          <div class="col-md-5" style="padding-left:100px;">
            <div class="right-dt">
              <div>标题</div>

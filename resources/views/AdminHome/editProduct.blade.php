@@ -214,7 +214,7 @@
         'onUploadSuccess':function(file,data,respose){
             var html="";
                 html+="<div style='margin-left:10px;float:left;width:100px;height:100px;position:relative;'>";
-                html+='<img style="width:100px;height:100px;" src='+'/'+data+'>';
+                html+='<img style="width:100px;height:100px;" src='+data+'>';
                 html+='<span class="del" style="position:absolute;right:0px;top:-8px;"><img src="/public/AdminHome/images/delete.png"></span>';
                 html+='<input type="hidden" name="thumb[]" value='+data+'>';
                 html+="</div>"; 

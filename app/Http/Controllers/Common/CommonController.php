@@ -17,15 +17,14 @@ class CommonController extends Controller
             $entension = $file -> getClientOriginalExtension();//获取图片的格式
             $newName=date('YmdHis').mt_rand(100,999).'.'.$entension;
             $path=$file->move(base_path().'/upload',$newName);//文件存储地址
-            $filePath='upload/'.$newName;
-            $thumbPath='thumb/'.$newName;
-            //制作缩略图
+            $filePath='/upload/'.$newName;
+            // $thumbPath='/upload/thumb/';
+            // // // //制作缩略图
 
-            //Image::configure(array('driver' => 'imagick'));
-            $img = Image::make($filePath)->resize(300, 200);
-                   die('ok');
-            
-            $img->save(base_path().'/'.$thumbPath);
+            // // // //Image::configure(array('driver' => 'imagick'));
+            // $watermark='/upload/water/watermark.png';
+            // $img = Image::make($filePath)->resize(320, 240)->insert($watermark);
+            // $img->save($thumbPath);
             return $filePath;
         }
     }

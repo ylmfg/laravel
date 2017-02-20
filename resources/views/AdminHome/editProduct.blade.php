@@ -212,6 +212,7 @@
         'auto': true,
         'multi': true,
         'onUploadSuccess':function(file,data,respose){
+            alert(data);
             var html="";
                 html+="<div style='margin-left:10px;float:left;width:100px;height:100px;position:relative;'>";
                 html+='<img style="width:100px;height:100px;" src='+data+'>';

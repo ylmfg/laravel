@@ -2,13 +2,13 @@
 <html>
 	<head lang="en">
 		 <meta charset="utf-8">
+     <meta name="keyword" content="意灵玻艺装饰工坊,创意,灵感,冰晶画批发">
+     <meta name="description" content="传递灵感创意,呈现智慧与生活">
 		 <meta name="viewport" content="width=device-width,initial-scale=1">
 		 <title></title>
 		 <link  href="{{asset('/IndexHome/css/bootstrap.min.css')}}" rel="stylesheet">
 		 <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
-         <style>
-         
-         </style>
+  
 	</head>
     <body class="home-template">
     	 <header class="main-header">
@@ -209,6 +209,7 @@
                        </a>
                     </div>
                   </div>
+                   
                   <div class="widget">
                     <h4 class="title">标签云</h4>
                     <div class="content tag-cloud">

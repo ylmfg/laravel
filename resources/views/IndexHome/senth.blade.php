@@ -120,7 +120,6 @@
        var flow = layui.flow;
       flow.load({
     elem: '#LAY_demo1' //流加载容器
-   //滚动条所在元素，一般不用填，此处只是演示需要。
     ,done: function(page, next){ //执行下一页的回调
       page=1;
       //模拟数据插入

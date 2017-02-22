@@ -74,3 +74,25 @@ object:判断一个属性是否是某个对象自身拥有的用hasOwnProperty()
                          数据库
 一、一对多  一个品牌有多个商品，一个商品对应一个品牌
 二、多对多  一个商品有多个扩展信息，一个扩展信息对应多个商品
+商品属性表
+create table attribute(
+   attr_id   
+   attr_name
+   attr_import_type
+   attr_type
+   attr_value
+   type_id
+)
+商品属性关联表
+create table good_attr(
+  good_attr_id
+  good_id
+  attr_id
+  attr_value
+)
+商品属性类型表 
+create table good_type(
+  type_id
+  type_name
+
+)

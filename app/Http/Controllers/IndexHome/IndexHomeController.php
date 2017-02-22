@@ -5,6 +5,7 @@ namespace App\Http\Controllers\IndexHome;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -12,8 +13,8 @@ class IndexHomeController extends Controller
 {  
    public function index(){
       $userData=Auth::user();
-      $productList=DB::table('production')->paginate(3);
-
+      $productList=DB::table('production')->paginate(2);
+      
       foreach($productList as $product){
          $product->keyword=explode(',',$product->keyword);
       }
@@ -28,5 +29,15 @@ class IndexHomeController extends Controller
    public function detail($productId){
       $product=DB::table('production')->find($productId);
       return view('IndexHome/detail',['product'=>$product]);
+   }
+   public function pageArticle(){
+      $data=Input::all();
+      $page=$data['page'];
+      $num=1;
+      $offset=($page-1)*$num;
+      $count=DB::table('production')->count();//获取总共的记录数;
+      $pageNum=ceil($count/$num);//总的页码数
+      $productList=DB::table('production')->forPage($offset,$num)->get();
+      echo json_encode($productList);
    }
 }

@@ -8,6 +8,8 @@
 		 <title></title>
 		 <link  href="{{asset('/IndexHome/css/bootstrap.min.css')}}" rel="stylesheet">
 		 <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
+   <!--     <link href="{{asset('/layui/css/layui.css')}}" rel="stylesheet"> -->
+
   
 	</head>
     <body class="home-template">
@@ -74,7 +76,7 @@
     <section class="content-wrap">
        <div class="container">
           <div class="row">
-             <main class="col-md-8 main-content">
+             <main class="col-md-8 main-content" id="LAY_demo1">
 
                @foreach($productList as $product)
                 <article class="post tag-about-ghost tag-ghost-in-depth tag-zhu-shou-han-shu">
@@ -87,7 +89,7 @@
                          作者
                         <a href="#">{{$product->publisher}}</a>
                        </span>
-                       <time class="date" datetime="2016/12/29">{{date('Y年m月d日',$product->uptime)}}</time>
+                       <span class="date" datetime="2016/12/29">{{date('Y年m月d日',$product->uptime)}}</span>
                     </div>
                   </div>
                   <div class="post-content">
@@ -108,10 +110,11 @@
           </article>
          @endforeach
           <article class="">
-                 <nav>
-                    <div class="list-page">
+                 <nav style="text-align: center;">
+                   <!--  <div class="list-page">
                         {{$productList->links()}}
-                    </div>
+                    </div> -->
+                    <button class="clickMore btn btn-info">点击加载更多</button>
                 </nav>
           </article>
              </main>
@@ -239,7 +242,6 @@
      <script type="text/javascript" src="{{asset('/IndexHome/js/jquery-2.0.3.min.js')}}"></script>
      <script type="text/javascript" src="{{asset('/IndexHome/js/bootstrap.min.js')}}"></script>
      <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
-
     <script>
        // layer.ready(function(){ //为了layer.ext.js加载完毕再执行
        //        layer.open({
@@ -261,4 +263,50 @@
          });
        })
      </script>
+      <script type="text/javascript">
+           $(function(){
+                var page=4;
+                var data={
+                      'page':page,
+                      '_token':"{{csrf_token()}}"
+                  };
+                $('.clickMore').on('click',function(){
+                  var url="{{url('pageArticle')}}";
+              
+               $.post(url,data,function(response){
+                   $.each(response,function(idx,obj){
+               var html='';
+               html+='<article class="post tag-about-ghost tag-ghost-in-depth tag-zhu-shou-han-shu">';
+               html+='<div class="post-head">';
+               html+='<h1 class="post-title">';
+               html+='<a href="#">'+obj.title+'</a>';
+               html+='</h1>';
+               html+='<div class="post-meta">';
+               html+='<span class="author">';
+               html+='作者';
+               html+='<a href="#">'+obj.publisher+'</a>';
+               html+='</span>';
+               html+='<span class="date" datetime="2016/12/29">'+obj.time+'</span>';
+               html+='</div>';
+               html+='</div>';
+               html+='<div class="post-content">';
+               html+='<p>'+obj.intro+'</p>';
+               html+='</div>';
+               html+='<div class="post-permalink">';
+               html+='</div>';
+               html+='<div class="footer clearfix">';
+               html+='<hr>';
+               html+='<div class="pull-left tag-list">';
+               html+='<i class="fa fa-folder-open-o"></i>';
+               html+='<a href="javascript:;" class="btn btn-warning">{{$v}}</a>';
+               html+='</div>';
+               html+='</div>';
+               html+='</article>';
+               $('#LAY_demo1 article:last').before(html);
+                   });
+                   data.page++;
+              },'json');
+           }); 
+    });
+   </script>
 </html>

@@ -12,6 +12,7 @@
 */
 //前台
 Route::any('/',"IndexHome\IndexHomeController@index");
+Route::any('pageArticle',"IndexHome\IndexHomeController@pageArticle");
 Route::any("photoWall","IndexHome\IndexHomeController@photoWall");
 Route::any("customer","IndexHome\IndexHomeController@customer");
 Route::any("cart","IndexHome\CartController@cart");
@@ -36,11 +37,13 @@ Route::any('editCate/cateId/{cateId}',"AdminHome\CategoryController@editCate");
 Route::any('delCate/cateId/{cateId}',"AdminHome\CategoryController@delCate");
 Route::any('insertProccess',"AdminHome\ZuoPingController@insertProccess");
 Route::any('editProduct/productId/{productId}',"AdminHome\ZuoPingController@editProduct");
+Route::any('goodType',"AdminHome\GoodTypeController@goodType");
 Route::auth();
 
 
 Route::get('/home', 'HomeController@index');
 // Route::resource('test','TestController');
-Route::resource('tangshuai','TestController');
+// Route::resource('tangshuai','TestController');
+Route::resource('goodType',"AdminHome\GoodTypeController");
 
 

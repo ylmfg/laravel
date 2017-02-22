@@ -6,6 +6,11 @@
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/common.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/main.css')}}"/>
     <script type="text/javascript" src="{{asset('AdminHome/js/libs/modernizr.min.js')}}"></script>
+    <style>
+        .center{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div class="topbar-wrap white">
@@ -37,7 +42,7 @@
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
                         <li><a href="{{url('zuoping')}}"><i class="icon-font">&#xe008;</i>作品管理</a></li>
-                        <li><a href="{{url('goodType')}}"><i class="icon-font">&#xe005;</i>商品属性类型管理</a></li>
+                        <li><a href="{{url('goodType')}}"><i class="icon-font">&#xe005;</i>商品类型管理</a></li>
                         <li><a href="{{url('category')}}"><i class="icon-font">&#xe006;</i>分类管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe004;</i>留言管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
@@ -68,28 +73,32 @@
             </div>
             <div class="result-content">
                 <div class="short-wrap">
-                    <a href="{{url('insert')}}"><i class="icon-font">&#xe001;</i>新增作品</a>
-                    <a href="#"><i class="icon-font">&#xe005;</i>新增博文</a>
-                    <a href="#"><i class="icon-font">&#xe048;</i>新增作品分类</a>
-                    <a href="#"><i class="icon-font">&#xe041;</i>新增博客分类</a>
-                    <a href="#"><i class="icon-font">&#xe01e;</i>作品评论</a>
+                    <a href="{{url('goodType/create')}}"><i class="icon-font">&#xe001;</i>新增商品属性类型</a>
+  
                 </div>
             </div>
         </div>
      
         <div class="result-wrap">
-            <div class="result-title">
-                <h1>使用帮助</h1>
-            </div>
             <div class="result-content">
-                <ul class="sys-info-list">
-                    <li>
-                        <label class="res-lab">官方交流网站：</label><span class="res-info"><a href="{{url('/')}}" title="意灵玻艺装饰工坊" target="_blank">意灵玻艺装饰工坊</a></span>
-                    </li>
-                    <li>
-                        <label class="res-lab">官方交流QQ群：</label><span class="res-info"><a class="qq-link" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=b04cbcd330cddf806985d55966a397fde5a1b855f6530efbd6d958a43aea5566"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="意灵玻艺装饰工坊" title="意灵玻艺装饰工坊"></a> </span>
-                    </li>
-                </ul>
+               <table style="width:100%;" border="1">
+                   <thead>
+                      <tr>
+                       <th>编号</th>
+                       <th>商品属性类型名称</th>
+                       <th>操作</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                     @foreach($goodTypeList as $goodType)
+                       <tr>
+                           <td class="center">{{$goodType->type_id}}</td>
+                           <td class="center">{{$goodType->type_name}}</td>
+                           <td class="center"><a href="{{url('goodType',['goodType_id'=>$goodType->type_id])}}">删除</a>&nbsp;&nbsp;<a href="{{url('goodType',['goodType_id'=>$goodType->type_id])}}">编辑</a></td>
+                       </tr>
+                    @endforeach
+                   </tbody>
+               </table>
             </div>
         </div>
     </div>

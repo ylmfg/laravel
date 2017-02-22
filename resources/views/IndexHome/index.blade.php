@@ -111,7 +111,7 @@
          @endforeach
           <article class="">
                  <nav style="text-align: center;">
-                   <!--  <div class="list-page">
+                <!--     <div class="list-page">
                         {{$productList->links()}}
                     </div> -->
                     <button class="clickMore btn btn-info">点击加载更多</button>
@@ -270,11 +270,13 @@
                       'page':page,
                       '_token':"{{csrf_token()}}"
                   };
+
                 $('.clickMore').on('click',function(){
                   var url="{{url('pageArticle')}}";
               
                $.post(url,data,function(response){
-                   $.each(response,function(idx,obj){
+
+                   $.each(response.list,function(idx,obj){
                var html='';
                html+='<article class="post tag-about-ghost tag-ghost-in-depth tag-zhu-shou-han-shu">';
                html+='<div class="post-head">';
@@ -305,7 +307,12 @@
                $('#LAY_demo1 article:last').before(html);
                    });
                    data.page++;
+                       if(data.page-1>response.pageNum){
+                      $('.clickMore').off('click');
+                      $('.clickMore').hide();
+                     }
               },'json');
+            
            }); 
     });
    </script>

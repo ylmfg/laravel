@@ -37,7 +37,9 @@ class IndexHomeController extends Controller
       $offset=($page-1)*$num;
       $count=DB::table('production')->count();//获取总共的记录数;
       $pageNum=ceil($count/$num);//总的页码数
-      $productList=DB::table('production')->forPage($offset,$num)->get();
+      $productList['list']=DB::table('production')->forPage($offset,$num)->get();
+   
+      $productList['pageNum']=$pageNum;
       echo json_encode($productList);
    }
 }

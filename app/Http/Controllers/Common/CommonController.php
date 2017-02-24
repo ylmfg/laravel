@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Common;
-// require 'vendor/autoload.php';
-// use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\ImageManager;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
@@ -18,11 +17,9 @@ class CommonController extends Controller
             $newName=date('YmdHis').mt_rand(100,999).'.'.$entension;
             $path=$file->move(base_path().'/upload',$newName);//文件存储地址
             $filePath='/upload/'.$newName;
-
-            // $thumbPath='/upload/thumb/';
-            // // // //制作缩略图
-
-            // // // //Image::configure(array('driver' => 'imagick'));
+            //require '/vendor/autoload.php';
+              // $thumbPath='/upload/thumb/';
+            // //Image::configure(array('driver' => 'imagick'));
             // $watermark='/upload/water/watermark.png';
             // $img = Image::make($filePath)->resize(320, 240)->insert($watermark);
             // $img->save($thumbPath);

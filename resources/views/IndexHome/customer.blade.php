@@ -66,6 +66,6 @@
              </div>
            </div>
    </nav>
-<a href="javascript:(function(){window.open('http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)+'&source=bookmark','_blank','width=450,height=400');})()" title="新浪微博分享"><img src="http://t.sina.com.cn/favicon.ico"  alt="新浪微博分享" border="0">分享到新浪微博</a> 
+
    </body>
    </html>

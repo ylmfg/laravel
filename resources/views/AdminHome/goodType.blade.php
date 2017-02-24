@@ -109,7 +109,11 @@
                             <tr>
                                 <th><i class="require-red">*</i>商品属性类型名称：</th>
                                 <td>
+                                 @if(!empty($goodType->type_name))
+                                    <input class="common-text required" id="title" name="type_name" size="50" value="{{$goodType->type_name}}" type="text">
+                                   @else
                                     <input class="common-text required" id="title" name="type_name" size="50" value="" type="text">
+                                 @endif
                                 </td>
                             </tr>
                             <tr>
@@ -121,6 +125,9 @@
                             </tr>
                         </tbody></table>
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                            @if(!empty($goodType->type_id))
+                            <input type="hidden" name="type_id" value="{{$goodType->type_id}}">
+                            @endif
                 </form>
             </div>
         </div>
@@ -129,5 +136,27 @@
     <!--/main-->
 </div>
 </body>
-
+<script>
+    $(function(){
+        var type_id=$("input[name='type_id']").val();
+        if(type_id){
+            $("input[type='submit']").click(function(check){
+            var url="{{url('goodType')}}"+'/'+type_id+'/edit';
+            var type_name=$("input[name='type_name']").val();
+            var data={
+                'type_id':type_id,
+                'type_name':type_name
+            }
+            $.get(url,data,function(res){
+                if(res.error==1){
+                    window.location.href="{{url('goodType')}}";
+                }else{
+                    location.href=location.href;
+                }
+            },'json');
+            check.preventDefault();
+          });
+        }
+    })
+</script>
 </html>

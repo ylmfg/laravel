@@ -10,6 +10,15 @@
        <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
        <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
       <style>
+      .col-md-8 p{
+        margin: 30px 0 10px;
+      }
+      .col-md-8 .price{
+        padding:25px 0;
+      }
+      .col-md-8 .btn{
+        margin:20px 0;
+      }
       .price{
         font-size:18px;
       }
@@ -166,44 +175,46 @@
          </div>
       </div>
       <div class="row">
-          <div class="col-md-7 thumbnail">
+          <div class="col-md-4 thumbnail">
             <img src="{{asset('/IndexHome/images/thumb3.jpg')}}"  width="80%" >
           </div>
-          <div class="col-md-5">
+          <div class="col-md-8">
             <h2>广告灯箱市场——彰显艺术效果，先声夺人</h2>
-             <p><span class="label label-success">广告灯箱市场——彰显艺术效果，先声夺人</span>
+             <p ><span class="label label-success">广告灯箱市场——彰显艺术效果，先声夺人</span>
 运用特殊工艺处理技术制作出来的玻璃形象牌、玻璃灯箱、大型户外玻璃广告牌等也是一种全新的商业展示手段，艺术玻璃其效果也非一般广告效果可比。为企业宣传提供新的视野，也为广告公司提供新的商业机会。立体视觉的广告玻璃镜面简直让人触手可及；呼之欲出的立体逼真感，给人们带来强烈的视觉冲击，让人流连忘返、不忍离去的广告效应。据统计，全国每年广告灯箱材料消耗近200亿元的市场容量，万人迷玻璃广告牌、广告灯箱的出现将带来新一轮的冲击波。
       </p>
         <div class="price">
             <del class="originalPrice">原价￥:55:00</del>
             <b class="currentPrice">现价￥:55:00</b>
          </div>
+         <p><a href="javascript:(function(){window.open('http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)+'&source=bookmark','_blank','width=450,height=400');})()" title="新浪微博分享"><img src="http://t.sina.com.cn/favicon.ico"  alt="新浪微博分享" border="0">分享到新浪微博</a></p> 
          <a class="btn btn-info" href="#">查看详情</a>
           <a class="btn btn-warning" href="#">加入购物车</a>
           </div>
       </div>
             <div class="row">
-          <div class="col-md-7 thumbnail">
+          <div class="col-md-4 thumbnail">
             <img src="{{asset('/IndexHome/images/thumb2.jpg')}}"  width="80%">
           </div>
-          <div class="col-md-5">
+          <div class="col-md-8">
             <h2>广告灯箱市场——彰显艺术效果，先声夺人</h2>
              <p><span class="label label-success">广告灯箱市场——彰显艺术效果，先声夺人</span>
 运用特殊工艺处理技术制作出来的玻璃形象牌、玻璃灯箱、大型户外玻璃广告牌等也是一种全新的商业展示手段，艺术玻璃其效果也非一般广告效果可比。为企业宣传提供新的视野，也为广告公司提供新的商业机会。立体视觉的广告玻璃镜面简直让人触手可及；呼之欲出的立体逼真感，给人们带来强烈的视觉冲击，让人流连忘返、不忍离去的广告效应。据统计，全国每年广告灯箱材料消耗近200亿元的市场容量，万人迷玻璃广告牌、广告灯箱的出现将带来新一轮的冲击波。
-      </p>
+           </p>
          <div class="price">
             <del class="originalPrice">原价￥:55:00</del>
             <b class="currentPrice">现价￥:55:00</b>
          </div>
-         <a class="btn btn-info" href="#">查看详情</a>
+              <p><a href="javascript:(function(){window.open('http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)+'&source=bookmark','_blank','width=450,height=400');})()" title="新浪微博分享"><img src="http://t.sina.com.cn/favicon.ico"  alt="新浪微博分享" border="0">分享到新浪微博</a></p>
+          <a class="btn btn-info" href="#">查看详情</a>
           <a class="btn btn-warning" href="#">加入购物车</a>
           </div>
       </div>
           <div class="row">
-          <div class="col-md-7 thumbnail">
+          <div class="col-md-4 thumbnail">
             <img src="{{asset('/IndexHome/images/thumb4.jpg')}}" width="80%">
           </div>
-          <div class="col-md-5">
+          <div class="col-md-8">
             <h2>广告灯箱市场——彰显艺术效果，先声夺人</h2>
              <p><span class="label label-success">广告灯箱市场——彰显艺术效果，先声夺人</span>
 运用特殊工艺处理技术制作出来的玻璃形象牌、玻璃灯箱、大型户外玻璃广告牌等也是一种全新的商业展示手段，艺术玻璃其效果也非一般广告效果可比。为企业宣传提供新的视野，也为广告公司提供新的商业机会。立体视觉的广告玻璃镜面简直让人触手可及；呼之欲出的立体逼真感，给人们带来强烈的视觉冲击，让人流连忘返、不忍离去的广告效应。据统计，全国每年广告灯箱材料消耗近200亿元的市场容量，万人迷玻璃广告牌、广告灯箱的出现将带来新一轮的冲击波。
@@ -212,6 +223,7 @@
             <del class="originalPrice">原价￥:55:00</del>
             <b class="currentPrice">现价￥:55:00</b>
          </div>
+             <p><a href="javascript:(function(){window.open('http://v.t.sina.com.cn/share/share.php?title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)+'&source=bookmark','_blank','width=450,height=400');})()" title="新浪微博分享"><img src="http://t.sina.com.cn/favicon.ico"  alt="新浪微博分享" border="0">分享到新浪微博</a></p>
          <a class="btn btn-info" href="#">查看详情</a>
          <a class="btn btn-warning" href="">加入购物车</a>
           </div>

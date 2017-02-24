@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/common.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('AdminHome/css/main.css')}}"/>
     <script type="text/javascript" src="{{asset('AdminHome/js/libs/modernizr.min.js')}}"></script>
+       <script type="text/javascript" src="{{asset('IndexHome/js/jquery-2.0.3.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
     <style>
         .center{
             text-align: center;
@@ -94,7 +96,7 @@
                        <tr>
                            <td class="center">{{$goodType->type_id}}</td>
                            <td class="center">{{$goodType->type_name}}</td>
-                           <td class="center"><a href="{{url('goodType',['goodType_id'=>$goodType->type_id])}}">删除</a>&nbsp;&nbsp;<a href="{{url('goodType',['goodType_id'=>$goodType->type_id])}}">编辑</a></td>
+                           <td class="center"><a href="javascript:void(0)" data-toggle="{{url('goodType',['goodType_id'=>$goodType->type_id])}}" class="del">删除</a>&nbsp;&nbsp;<a href="{{url('goodType',['goodType_id'=>$goodType->type_id])}}">编辑</a></td>
                        </tr>
                     @endforeach
                    </tbody>
@@ -105,4 +107,36 @@
     <!--/main-->
 </div>
 </body>
+<script>
+  $(function(){
+     $('.del').on('click',function(){
+         var url=$(this).attr('data-toggle');
+         var data={
+            'type':'DELETE',
+            '_token':"{{csrf_token()}}"
+         };
+         layer.open({
+                content: '您确定要删除本条数据么？'
+                ,btn: ['确定', '不要']
+                ,yes: function(index){
+                    $.ajax({
+                             type: "DELETE",
+                             url: url,
+                             data: data,
+                             dataType: "json",
+                             success: function(res){
+                                    if(res.error==1){
+                                        window.location.href=location.href;
+                                    }else{
+                                        window.location.href=location.href;
+                                    }
+                            }
+                    });
+                  layer.close(index);
+                }
+          });
+  
+     });
+  });
+</script>
 </html>

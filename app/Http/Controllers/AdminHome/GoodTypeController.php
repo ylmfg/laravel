@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminHome;
 use Illuminate\Http\Request;
 use Validator;
 use DB;
+use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -80,6 +81,10 @@ class GoodTypeController extends Controller
      */
     public function show($id)
     {  
+        $goodType=DB::table('good_type')->where('type_id',$id)->first();
+         
+        return view('AdminHome\goodType',['goodType'=>$goodType]);
+
     }
 
     /**
@@ -89,8 +94,18 @@ class GoodTypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+     {   
+        $input=Input::get();
+        $type_name=$input['type_name'];
+        $type_id=$input['type_id'];
+        $sql="update good_type set `type_name`='{$type_name}' where `type_id`='{$type_id}'";
+        $res=DB::update($sql);
+        if($res){
+            $data=['error'=>1];
+        }else{
+            $data=['error'=>2];
+         }
+        echo json_encode($data);    
     }
 
     /**
@@ -102,7 +117,7 @@ class GoodTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
     }
 
     /**
@@ -113,6 +128,17 @@ class GoodTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $sql="delete from good_type where `type_id`='{$id}'";
+         $res=DB::delete($sql);
+         if($res){
+            $data=[
+              'error'=>1
+            ];
+         }else{
+            $data=[
+             'error'=>2
+            ];
+         }
+         echo json_encode($data);
     }
 }

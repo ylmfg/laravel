@@ -18,7 +18,7 @@ class GoodTypeController extends Controller
      */
     public function index()
     {    
-        $goodType=DB::table('good_type')->get();
+        $goodType=DB::table('good_type')->paginate(3);
      
         return view('AdminHome\goodTypeList',['goodTypeList'=>$goodType]); 
     }
@@ -46,8 +46,7 @@ class GoodTypeController extends Controller
        // echo '<pre>';
        // var_dump($data);
         //验证规则
-        $rules= [    
-                      
+        $rules= [       
                       'type_name'=>'required',
                 ];
         //验证消息

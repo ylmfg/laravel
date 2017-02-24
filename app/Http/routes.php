@@ -45,5 +45,6 @@ Route::get('/home', 'HomeController@index');
 // Route::resource('test','TestController');
 // Route::resource('tangshuai','TestController');
 Route::resource('goodType',"AdminHome\GoodTypeController");
+Route::resource('attribute',"AdminHome\AttributeController");
 
 

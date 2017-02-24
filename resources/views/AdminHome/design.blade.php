@@ -52,7 +52,7 @@
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
                         <li><a href="{{url('zuoping')}}"><i class="icon-font">&#xe008;</i>作品管理</a></li>
-                        <li><a href="design.html"><i class="icon-font">&#xe005;</i>博文管理</a></li>
+                        <li><a href="{{url('goodType')}}"><i class="icon-font">&#xe005;</i>商品属性类型管理</a></li>
                         <li><a href="{{url('category')}}"><i class="icon-font">&#xe006;</i>分类管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe004;</i>留言管理</a></li>
                         <li><a href="design.html"><i class="icon-font">&#xe012;</i>评论管理</a></li>
@@ -107,6 +107,7 @@
                         <a href="{{url('insert')}}"><i class="icon-font"></i>新增作品</a>
                         <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
                         <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+                        <a href="{{url('attribute/create')}}"><i class="icon-font"></i>商品属性</a>
                     </div>
                 </div>
                 <div class="result-content">

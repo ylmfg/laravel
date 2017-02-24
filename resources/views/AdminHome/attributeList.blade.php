@@ -81,7 +81,7 @@
             </div>
             <div class="result-content">
                 <div class="short-wrap">
-                    <a href="{{url('goodType/create')}}"><i class="icon-font">&#xe001;</i>新增商品属性类型</a>
+                    <a href="{{url('goodType')}}"><i class="icon-font">&#xe001;</i>返回商品类型管理</a>
   
                 </div>
             </div>
@@ -94,23 +94,42 @@
                       <tr>
                        <th>编号</th>
                        <th>商品属性类型名称</th>
+                       <th>属性是否可选</th>
+                       <th>属性的录入方式</th>
                        <th>操作</th>
                        </tr>
                    </thead>
                    <tbody>
-                     @foreach($goodTypeList as $goodType)
+                     @foreach($attributeList as $attribute)
                        <tr>
-                           <td class="center">{{$goodType->type_id}}</td>
-                           <td class="center">{{$goodType->type_name}}</td>
+                           <td class="center">{{$attribute->attr_id}}</td>
+                           <td class="center">{{$attribute->attr_name}}</td>
                            <td class="center">
-                           <a href="{{url('attribute',['type_id'=>$goodType->type_id])}}">属性列表</a>
-                           <a href="javascript:void(0)" data-toggle="{{url('goodType',['goodType_id'=>$goodType->type_id])}}" class="del">删除</a>&nbsp;&nbsp;<a href="{{url('goodType',['goodType_id'=>$goodType->type_id])}}">编辑</a></td>
+                               @if($attribute->attr_type==1)
+                                   单一属性
+                                 @elseif($attribute->attr_type==2)
+                                   多种属性
+                                 @elseif($attribute->attr_type==3)
+                                   唯一属性
+                               @endif
+                           </td>
+                           <td class="center">
+                                @if($attribute->attr_input_type==1)
+                                   手动输入
+                                 @elseif($attribute->attr_input_type==2)
+                                   列表中选择
+                                 @elseif($attribute->attr_input_type==3)
+                                   多行文本框
+                               @endif
+                           </td>
+                           <td class="center">
+                           <a href="javascript:void(0)" data-toggle="{{url('attribute',['attr_id'=>$attribute->attr_id])}}" class="del">删除</a>&nbsp;&nbsp;<a href="{{url('attribute',['attr_id'=>$attribute->attr_id,'eidt'=>'edit'])}}">编辑</a></td>
                        </tr>
                     @endforeach
                    </tbody>
                </table>
               <div class="list-page" style="float:left;">
-                        {{$goodTypeList->links()}}
+                        {{$attributeList->links()}}
               </div>
             </div>
                  

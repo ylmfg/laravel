@@ -136,14 +136,12 @@ class AttributeController extends Controller
         //验证
         $validata=validator:: make($data,$rules,$message);
 
-        $sql="update `attribute` set `attr_name`='{$attr_name}',`attr_type`='{$attr_type}',`attr_input_type`='{$attr_input_type}',`attr_value`='{$attr_value}'";
+        $sql="update `attribute` set `attr_name`='{$attr_name}',`attr_type`='{$attr_type}',`attr_input_type`='{$attr_input_type}',`attr_value`='{$attr_value}'where `attr_id`='{$id}'";
         $res=DB::update($sql);
               
        if($res){
-            die('ok');
             $data=['error'=>1];
         }else{
-            die('no');
             $data=['error'=>2];
         }
         echo json_encode($data);

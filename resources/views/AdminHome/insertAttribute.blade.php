@@ -136,13 +136,13 @@
                                 <th><i class="require-red">*</i>属性是否可选：</th>
                                 <td>
                                   @if(!empty($attribute->attr_type))
-                              单一属性:&nbsp;<input type="radio" name="attr_type" value="1" @if($attribute->attr_type==1) checked @endif>&nbsp;&nbsp;&nbsp;&nbsp;
-                              多种属性:&nbsp;<input type="radio" name="attr_type" value="2" @if($attribute->attr_type==2) checked @endif>&nbsp;&nbsp;&nbsp;&nbsp;
-                              唯一属性:&nbsp;<input type="radio" name="attr_type" value="3" @if($attribute->attr_type==3) checked @endif>
+                              单一属性:&nbsp;<input type="radio" name="attr_type" class="attr_type" value="1" @if($attribute->attr_type==1) checked @endif>&nbsp;&nbsp;&nbsp;&nbsp;
+                              多种属性:&nbsp;<input type="radio" name="attr_type" class="attr_type" value="2" @if($attribute->attr_type==2) checked @endif>&nbsp;&nbsp;&nbsp;&nbsp;
+                              唯一属性:&nbsp;<input type="radio" name="attr_type" class="attr_type" value="3" @if($attribute->attr_type==3) checked @endif>
                                     @else
-                              单一属性:&nbsp;<input type="radio" name="attr_type" value="1">&nbsp;&nbsp;&nbsp;&nbsp;
-                              多种属性:&nbsp;<input type="radio" name="attr_type" value="2">&nbsp;&nbsp;&nbsp;&nbsp;
-                              唯一属性:&nbsp;<input type="radio" name="attr_type" value="3">
+                              单一属性:&nbsp;<input type="radio" name="attr_type"  class="attr_type" value="1">&nbsp;&nbsp;&nbsp;&nbsp;
+                              多种属性:&nbsp;<input type="radio" name="attr_type" class="attr_type" value="2">&nbsp;&nbsp;&nbsp;&nbsp;
+                              唯一属性:&nbsp;<input type="radio" name="attr_type" class="attr_type" value="3">
                                   @endif
              
                                 </td>
@@ -151,13 +151,13 @@
                                 <th><i class="require-red">*</i>属性的录入方式:</th>
                                 <td>
                                 @if(!empty($attribute->attr_input_type))
-                                手工录入:&nbsp;<input type="radio" name="attr_input_type" value="1" @if($attribute->attr_input_type==1) checked @endif>&nbsp;&nbsp;&nbsp;&nbsp;
-                              从下面的列表中选择:&nbsp;<input type="radio" name="attr_input_type" value="2" @if($attribute->attr_input_type==2) checked @endif>&nbsp;&nbsp;&nbsp;&nbsp;
-                              多行文本框:&nbsp;<input type="radio" name="attr_input_type" value="3" @if($attribute->attr_input_type==3) checked @endif>
+                                手工录入:&nbsp;<input type="radio" name="attr_input_type" class="attr_input_type" value="1" @if($attribute->attr_input_type==1) checked @endif>&nbsp;&nbsp;&nbsp;&nbsp;
+                              从下面的列表中选择:&nbsp;<input type="radio" class="attr_input_type" name="attr_input_type" value="2" @if($attribute->attr_input_type==2) checked @endif>&nbsp;&nbsp;&nbsp;&nbsp;
+                              多行文本框:&nbsp;<input type="radio" class="attr_input_type" name="attr_input_type" value="3" @if($attribute->attr_input_type==3) checked @endif>
                                  @else
-                              手工录入:&nbsp;<input type="radio" name="attr_input_type" value="1">&nbsp;&nbsp;&nbsp;&nbsp;
-                              从下面的列表中选择:&nbsp;<input type="radio" name="attr_input_type" value="2">&nbsp;&nbsp;&nbsp;&nbsp;
-                              多行文本框:&nbsp;<input type="radio" name="attr_input_type" value="3">
+                              手工录入:&nbsp;<input type="radio" class="attr_input_type" name="attr_input_type" value="1">&nbsp;&nbsp;&nbsp;&nbsp;
+                              从下面的列表中选择:&nbsp;<input type="radio" class="attr_input_type" name="attr_input_type" value="2">&nbsp;&nbsp;&nbsp;&nbsp;
+                              多行文本框:&nbsp;<input type="radio" class="attr_input_type" name="attr_input_type" value="3">
                                 @endif
                                 </td>
                             </tr>
@@ -178,6 +178,7 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                             @if(!empty($attribute->attr_id))
                             <input type='hidden' name="attr_id" value="{{$attribute->attr_id}}">
+                          <input type='hidden' name="type_id" value="{{$attribute->type_id}}">
                             @endif
                 </form>
             </div>
@@ -211,14 +212,15 @@
 <script type="text/javascript">
        $(function(){
        var attr_id=$("input[name='attr_id']").val();
+       var type_id=$("input[name='type_id']").val();
        if(attr_id){
         $("input[type='submit']").click(function(check){
           check.preventDefault();
           var url="{{url('attribute')}}"+'/'+attr_id;
           var data={
              'attr_name':$("input[name='attr_name']").val(),
-             'attr_type':$("input[name='attr_type']").val(),
-             'attr_input_type':$("input[name='attr_input_type']").val(),
+             'attr_type':$(".attr_type:checked").val(),
+             'attr_input_type':$(".attr_input_type:checked").val(),
              'attr_value':$("textarea[name='attr_value']").val(),
              '_token':"{{csrf_token()}}"
           };
@@ -229,7 +231,7 @@
              'dataType':'json',
              success:function(res){
                if(res.error==1){
-                 window.location.href="{{url('goodType')}}";
+                 window.location.href="{{url('attribute')}}"+'/'+type_id;
                }else{
                  window.location.href=location.href;
                }

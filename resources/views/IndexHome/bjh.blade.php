@@ -9,7 +9,7 @@
        <script type="text/javascript" src="{{asset('/IndexHome/js/bootstrap.min.js')}}"></script>
        <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
        <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
-       <link rel="stylesheet" type="text/css" href="http://libs.useso.com/js/font-awesome/4.2.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="{{asset('/IndexHome/css/bjh.min.css')}}">
        <link rel="stylesheet" type="text/css" href="{{asset('/IndexHome/css/style.css')}}">
       <style>
 

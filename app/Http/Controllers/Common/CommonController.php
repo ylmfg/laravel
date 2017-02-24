@@ -18,7 +18,7 @@ class CommonController extends Controller
             $newName=date('YmdHis').mt_rand(100,999).'.'.$entension;
             $path=$file->move(base_path().'/upload',$newName);//文件存储地址
             $filePath='/upload/'.$newName;
-<<<<<<< HEAD
+
             // $thumbPath='/upload/thumb/';
             // // // //制作缩略图
 
@@ -26,16 +26,7 @@ class CommonController extends Controller
             // $watermark='/upload/water/watermark.png';
             // $img = Image::make($filePath)->resize(320, 240)->insert($watermark);
             // $img->save($thumbPath);
-=======
-            $thumbPath='thumb/'.$newName;
-            //制作缩略图
 
-            //Image::configure(array('driver' => 'imagick'));
-            // $img = Image::make($filePath)->resize(300, 200);
-            //        die('ok');
-            
-            // $img->save(base_path().'/'.$thumbPath);
->>>>>>> 142d2ceed2d3268e3c5ded6b7cdbe55ec3a8c761
             return $filePath;
         }
     }

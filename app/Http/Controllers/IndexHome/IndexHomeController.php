@@ -8,7 +8,6 @@ use DB;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 class IndexHomeController extends Controller
 {  
    public function index(){
@@ -24,7 +23,15 @@ class IndexHomeController extends Controller
    	return view('IndexHome/photoWall');
    }
    public function customer(){
-   	return view('IndexHome/customer');
+     $i=1;
+     while($i<10){
+      if($i==5){
+         $i++;
+         continue;
+      }
+       ++$i;
+      echo $i."\n";
+     }
    }
    public function detail($productId){
       $product=DB::table('production')->find($productId);
@@ -42,4 +49,5 @@ class IndexHomeController extends Controller
       $productList['pageNum']=$pageNum;
       echo json_encode($productList);
    }
+
 }

@@ -9,14 +9,27 @@
        <script type="text/javascript" src="{{asset('/IndexHome/js/bootstrap.min.js')}}"></script>
        <link  href="{{asset('/IndexHome/css/app.css')}}" rel="stylesheet">
        <script type="text/javascript" src="{{asset('/layer/layer.js')}}"></script>
-       <link rel="stylesheet" type="text/css" href="http://libs.useso.com/js/font-awesome/4.2.0/css/font-awesome.min.css">
+       <link rel="stylesheet" type="text/css" href="{{asset('/IndexHome/css/font-awesome.min.css')}}">
        <link rel="stylesheet" type="text/css" href="{{asset('/IndexHome/css/style.css')}}">
+           <script type="text/javascript">
+
+  </script>
       <style>
          .left-ft img{
            margin:30px;
          }
          .right-dt div{
-          line-height: 90px;
+          line-height: 81px;
+         }
+         #thumblist li{
+           float:left;
+           list-style: none;
+           margin:10px;
+         }
+         .preview-box{
+          width:300px;
+          height:300px;
+          border:1px solid red;
          }
       </style>
 	</head>
@@ -76,53 +89,40 @@
    </nav>
    <div class="container">
       <div class="row box">
-        <div class="col-md-7">
+        <div class="col-md-6">
          <div class="box">
-          <div class="tb-booth tb-pic tb-s310">
-                <a href="images/01.jpg">
-                    <img src="images/01_mid.jpg" alt="美女" rel="images/01.jpg" class="jqzoom" />
-                </a>
+          <div class="tb-booth tb-pic tb-s310 jqzoom" id="srcImg">
+                    <img src="{{asset('../upload/images/1.jpg')}}" alt="美女" rel="{{asset('upload/images/1-1.jpg')}}" width="600" />
           </div>
           <ul class="tb-thumb" id="thumblist">
-           <li class="tb-selected">
+           <li class="tb-selected"  >
                 <div class="tb-pic tb-s40">
                    <a href="#">
-                      <img src="images/01_small.jpg" mid="images/01_mid.jpg" big="images/01.jpg">
+                      <img src="{{asset('../upload/images/2.jpg')}}" mid="{{asset('../upload/images/2-2.jpg')}}" big="{{asset('../upload/images/2.jpg')}}" width="150">
                    </a>
                 </div>
            </li>
-           <li>
-              <div class="tb-pic tb-s40">
+           <li  >
+            <div class="tb-pic tb-s40">
                   <a href="#">
-                     <img  src="images/02_small.jpg" mid="images/02_mid.jpg" big="images/02.jpg">
+                     <img  src="{{asset('../upload/images/3.jpg')}}" mid="{{asset('../upload/images/3-3.jpg')}}" big="{{asset('../upload/images/3.jpg')}}" width="150">
                   </a>
               </div>
           </li>
-          <li>
-             <div class="tb-pic tb-s40">
-                <a href="#">
-                    <img src="images/03_small.jpg" mid="images/03_mid.jpg" big="images/03.jpg">
-                </a>
-            </div>
-          </li>
-         <li>
+          <li  >
             <div class="tb-pic tb-s40">
-               <a href="#">
-                  <img src="images/04_small.jpg" mid="images/04_mid.jpg" big="images/04.jpg">
-              </a>
-            </div>
-        </li>
-        <li>
-           <div class="tb-pic tb-s40">
-               <a href="#">
-                  <img src="images/05_small.jpg" mid="images/05_mid.jpg" big="images/05.jpg">
-               </a>
-           </div>
-        </li>
+                  <a href="#">
+                     <img  src="{{asset('../upload/images/4.jpg')}}" mid="{{asset('../upload/images/4-4.jpg')}}" big="{{asset('../upload/images/4.jpg')}}" width="150">
+                  </a>
+              </div>
+          </li>
        </ul>
    </div>
-</div>
-         <div class="col-md-5" style="padding-left:100px;">
+</div> 
+         <div class="col-md-6" style="padding-left:60px;">
+           <div class="preview-box" style="position: absolute;"> 
+             <img id="preview-img"  src=""> 
+           </div> 
            <div class="right-dt">
              <div>标题</div>
              <div>运费</div>
@@ -210,4 +210,31 @@
       </div>
     </footer>   
   </body>
+
+  <script>
+    $(function(){
+
+      $("#thumblist li").on('click',function(){
+           var img=$(this).find('img').attr('src');
+           $("#srcImg").find('img').attr('src',img);
+      });
+      $("#srcImg img").mouseover(function(event){
+         var x=event.screenX; 
+         var y=event.screenY; 
+         //得出比列
+         var xx=$(this).width();
+         var yy=$(this).height();
+         //计算实际放图片位置
+         x=($("#preview-img").width()*x-150); 
+         y=($("#preview-img").height()*y-150); 
+         $("#preview-img").css('top',y+'px'); 
+         $("#preview-img").css('left',x+'px'); 
+         var prevImg=$(this).attr('src');
+         $("#preview-img").attr('src',prevImg);
+      });
+      $("#srcImg img").mouseout(function(){
+         $("#preview-img").attr('src'," ");
+      });
+    });
+  </script>
   </html>

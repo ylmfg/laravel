@@ -23,15 +23,7 @@ class IndexHomeController extends Controller
    	return view('IndexHome/photoWall');
    }
    public function customer(){
-     $i=1;
-     while($i<10){
-      if($i==5){
-         $i++;
-         continue;
-      }
-       ++$i;
-      echo $i."\n";
-     }
+    return view('IndexHome/customer');
    }
    public function detail($productId){
       $product=DB::table('production')->find($productId);

@@ -10,9 +10,8 @@ use App\Http\Controllers\Controller;
 class CartController extends Controller
 {     //购物车列表
       public function cart(){
-     
-     	 echo date('Y/m/d H:i:s',1489045151);
-     }
+     	   return view('IndexHome/cart');
+      }
      //添加到购物车
       public function addCart($product_id){
 

@@ -21,16 +21,35 @@
          .right-dt div{
           line-height: 81px;
          }
+         #srcImg{
+          position: relative;
+          width:600px;
+          height: 405px;
+         }
+         #srcImg i{
+          position: absolute;
+          width:100px;
+          height: 100px;
+          opacity: 0.4;
+          filter:alpha(opacity=40);
+          background: pink;
+          cursor: pointer;
+          left:0;
+          top:0;
+          display: none;
+         }
          #thumblist li{
            float:left;
            list-style: none;
            margin:10px;
          }
          .preview-box{
-          width:300px;
-          height:300px;
-          border:1px solid red;
+          position:absolute;overflow:hidden;margin-top:30px;display:none;width: 600px;height:600px;
          }
+         .preview-box img{
+          position:absolute;
+         }
+
       </style>
 	</head>
   <body>
@@ -91,37 +110,38 @@
       <div class="row box">
         <div class="col-md-6">
          <div class="box">
-          <div class="tb-booth tb-pic tb-s310 jqzoom" id="srcImg">
-                    <img src="{{asset('../upload/images/1.jpg')}}" alt="美女" rel="{{asset('upload/images/1-1.jpg')}}" width="600" />
+          <div class="tb-booth tb-pic tb-s310 jqzoom" id="srcImg" width="700" height="600" >
+              <img src="{{asset('../upload/images/2.jpg')}}" alt="美女" rel="{{asset('../upload/images/2-2.jpg')}}" />
+              <i></i>
           </div>
           <ul class="tb-thumb" id="thumblist">
            <li class="tb-selected"  >
                 <div class="tb-pic tb-s40">
                    <a href="#">
-                      <img src="{{asset('../upload/images/2.jpg')}}" mid="{{asset('../upload/images/2-2.jpg')}}" big="{{asset('../upload/images/2.jpg')}}" width="150">
+                      <img src="{{asset('../upload/images/2.jpg')}}" mid="{{asset('../upload/images/2-2.jpg')}}" big="{{asset('../upload/images/2.jpg')}}" width="80">
                    </a>
                 </div>
            </li>
            <li  >
             <div class="tb-pic tb-s40">
                   <a href="#">
-                     <img  src="{{asset('../upload/images/3.jpg')}}" mid="{{asset('../upload/images/3-3.jpg')}}" big="{{asset('../upload/images/3.jpg')}}" width="150">
+                     <img  src="{{asset('../upload/images/3.jpg')}}" mid="{{asset('../upload/images/3-3.jpg')}}" big="{{asset('../upload/images/3.jpg')}}" width="80">
                   </a>
               </div>
           </li>
           <li  >
             <div class="tb-pic tb-s40">
                   <a href="#">
-                     <img  src="{{asset('../upload/images/4.jpg')}}" mid="{{asset('../upload/images/4-4.jpg')}}" big="{{asset('../upload/images/4.jpg')}}" width="150">
+                     <img  src="{{asset('../upload/images/4.jpg')}}" mid="{{asset('../upload/images/4-4.jpg')}}" big="{{asset('../upload/images/4.jpg')}}" width="80">
                   </a>
               </div>
           </li>
        </ul>
    </div>
 </div> 
-         <div class="col-md-6" style="padding-left:60px;">
-           <div class="preview-box" style="position: absolute;"> 
-             <img id="preview-img"  src=""> 
+         <div class="col-md-6" style="padding-left:60px;position:relative;">
+           <div class="preview-box" style=""  > 
+             <img id="preview-img"  src="" > 
            </div> 
            <div class="right-dt">
              <div>标题</div>
@@ -217,23 +237,43 @@
       $("#thumblist li").on('click',function(){
            var img=$(this).find('img').attr('src');
            $("#srcImg").find('img').attr('src',img);
+           var mid=$(this).find('img').attr('big');
+           $("#srcImg").find('img').attr('rel',mid);
       });
-      $("#srcImg img").mouseover(function(event){
-         var x=event.screenX; 
-         var y=event.screenY; 
-         //得出比列
-         var xx=$(this).width();
-         var yy=$(this).height();
-         //计算实际放图片位置
-         x=($("#preview-img").width()*x-150); 
-         y=($("#preview-img").height()*y-150); 
-         $("#preview-img").css('top',y+'px'); 
-         $("#preview-img").css('left',x+'px'); 
-         var prevImg=$(this).attr('src');
+      $("#srcImg").mouseover(function(event){
+        $("#srcImg>i").show();
+        $(".preview-box").show();
+         var L=event.pageX;
+         var l=$(this).offset().left;
+         var left=L-l-50;
+         var T=event.pageY;
+         var t=$(this).offset().top;
+         var top=T-t-50;
+         left=left<0?0:left;
+         var smallw=$(this).find('img').width();
+         var smallh=$(this).find('img').height();
+         left=left>smallw-100?smallw-100:left;
+         top=top<0?0:top;
+         top=top>smallh-100?smallh-100:top;
+         $("#srcImg>i").css({left:left,top:top});
+
+         var bigw=$('.preview-box').find('img').width();
+         var bigh=$('.preview-box').find('img').height();
+
+        //图片比列
+         var smallwTobig=(bigw/smallw).toFixed(2);
+
+         var smallhTobig=(bigh/smallh).toFixed(2);
+         var prevImg=$(this).find('img').attr('rel');
          $("#preview-img").attr('src',prevImg);
+
+             var imgLeft=-(left*smallwTobig);
+             var imgTop=-(top*smallhTobig);
+             $("#preview-img").css({left:imgLeft,top:imgTop});
       });
-      $("#srcImg img").mouseout(function(){
-         $("#preview-img").attr('src'," ");
+      $("#srcImg").mouseout(function(){
+        $("#srcImg>i").hide();
+         $(".preview-box").hide();
       });
     });
   </script>

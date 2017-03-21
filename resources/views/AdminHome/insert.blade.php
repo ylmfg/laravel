@@ -188,7 +188,7 @@
     $("#uploadify").uploadify({
         'formData' : {
                     'timestamp' : '<?php echo $timestamp;?>',
-                    '_token'     : "{{csrf_token()}}"
+                    'token'    : "<?php echo md5('unique_salt' . $timestamp);?>"
                 },
         'swf':"{{asset('uploadify/uploadify.swf')}}",
         'uploader':"{{url('upload')}}",
@@ -209,6 +209,6 @@
             $.fn.delimgs('.del');
         }
     });
-  
 </script>
+
 </html>

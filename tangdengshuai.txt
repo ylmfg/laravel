@@ -104,3 +104,27 @@ create table good_type(
 5、foreach 遍历类里面所有可见的属性
 6、命名空间中，对于函数和常量来说，如果当前命名空间中不存在该函数或常量，php会使用全局中的函数和常量
 7、
+
+<!----下拉加载更多--->
+<!DOCTYPE html>  
+<html>  
+<head>  
+<script src="jquery.js" type="text/javascript"></script>  
+</head>  
+<body>  
+    <div>下拉加载更多</div>  
+    <div class="main" style="height:700px;overflow:auto;">  
+        <div class="child" style='border:1px solid red;margin-top:20px;color:grey;height:800px' ></div>  
+    </div>  
+</body>  
+<script  type="text/javascript">  
+$(document).ready(function(){  
+    $(".main").unbind("scroll").bind("scroll", function(e){  
+        var sum = this.scrollHeight;  
+        if (sum -50<= $(this).scrollTop() + $(this).height()) {  
+            $(".main").append($(".child").clone());  
+        }  
+    });  
+});  
+</script>  
+</html> 
